@@ -1,0 +1,334 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Apr  5 18:22:48 2019
+# Process ID: 7188
+# Current directory: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4892 C:\Users\Benjamin\Documents\Word-documents\CPP\ECE-5850\5850-Ublaze-Applications\src\uBlaze_Applications\uBlaze_Applications.xpr
+# Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/vivado.log
+# Journal file: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.xpr
+update_compile_order -fileset sources_1
+write_hwdef -force  -file C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+open_run impl_1
+open_hw
+set_property target_constrs_file C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/constraints/fpga.xdc [current_fileset -constrset]
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}
+create_bd_port -dir I -from 3 -to 0 board_switch
+create_bd_port -dir O -from 3 -to 0 led
+connect_bd_net [get_bd_ports board_switch] [get_bd_ports led]
+set_property location {1590 531} [get_bd_ports led]
+set_property location {499 536} [get_bd_ports led]
+set_property location {489 398} [get_bd_ports led]
+set_property location {-74 365} [get_bd_ports led]
+set_property location {-74 428} [get_bd_ports led]
+set_property location {-85 308} [get_bd_ports led]
+set_property location {-88 766} [get_bd_ports led]
+set_property location {315 396} [get_bd_ports led]
+set_property location {600 525} [get_bd_ports led]
+set_property location {-199 604} [get_bd_ports board_switch]
+set_property location {2 568} [get_bd_ports led]
+set_property location {-88 622} [get_bd_ports led]
+set_property location {-190 672} [get_bd_ports led]
+startgroup
+set_property location {-194 413} [get_bd_ports led]
+set_property location {-194 343} [get_bd_ports board_switch]
+endgroup
+set_property location {-195 447} [get_bd_ports led]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+set_property LEFT 2 [get_bd_ports /led]
+set_property LEFT 2 [get_bd_ports /board_switch]
+copy_bd_objs /  [get_bd_ports {led}]
+set_property location {20 446} [get_bd_intf_ports gpio]
+undo
+set_property location {2896 -82} [get_bd_ports led1]
+set_property location {1499 609} [get_bd_ports led1]
+set_property location {-61 490} [get_bd_ports led1]
+connect_bd_net [get_bd_ports led1] [get_bd_ports reset_n]
+set_property LEFT 3 [get_bd_ports /led1]
+set_property RIGHT 3 [get_bd_ports /led1]
+set_property location {-149 497} [get_bd_ports led1]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+delete_bd_objs [get_bd_cells xlslice_0]
+delete_bd_objs [get_bd_ports led1]
+delete_bd_objs [get_bd_nets board_switch_1] [get_bd_ports led]
+create_bd_port -dir O led0
+copy_bd_objs /  [get_bd_ports {led0}]
+copy_bd_objs /  [get_bd_ports {led0}]
+copy_bd_objs /  [get_bd_ports {led0}]
+startgroup
+set_property location {182 840} [get_bd_ports led3]
+set_property location {182 860} [get_bd_ports led2]
+set_property location {182 880} [get_bd_ports led1]
+set_property location {182 1370} [get_bd_ports led0]
+endgroup
+startgroup
+set_property location {-38 529} [get_bd_ports led3]
+set_property location {-58 529} [get_bd_ports led2]
+set_property location {-78 529} [get_bd_ports led1]
+set_property location {-98 529} [get_bd_ports led0]
+endgroup
+startgroup
+set_property location {-142 457} [get_bd_ports led3]
+set_property location {-162 457} [get_bd_ports led2]
+set_property location {-182 457} [get_bd_ports led1]
+set_property location {-202 457} [get_bd_ports led0]
+endgroup
+startgroup
+set_property location {-181 494} [get_bd_ports led3]
+set_property location {-201 494} [get_bd_ports led2]
+set_property location {-331 84} [get_bd_ports led0]
+set_property location {-221 494} [get_bd_ports led1]
+endgroup
+set_property location {-240 448} [get_bd_ports led3]
+set_property location {-213 99} [get_bd_ports led1]
+set_property location {-205 31} [get_bd_ports led3]
+set_property location {-209 39} [get_bd_ports led2]
+set_property location {-199 49} [get_bd_ports led1]
+set_property location {-205 -86} [get_bd_ports led3]
+set_property location {-197 3} [get_bd_ports led1]
+set_property location {-207 29} [get_bd_ports led0]
+connect_bd_net [get_bd_ports led3] [get_bd_ports reset_n]
+connect_bd_net [get_bd_ports led2] [get_bd_pins rst_clk_wiz_1_100M/mb_reset]
+connect_bd_net [get_bd_ports led1] [get_bd_pins rst_clk_wiz_1_100M/bus_struct_reset]
+delete_bd_objs [get_bd_ports board_switch]
+create_bd_port -dir I sw1
+connect_bd_net [get_bd_ports sw1] [get_bd_ports led0]
+save_bd_design
+set_property name sw0 [get_bd_ports sw1]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0
+endgroup
+set_property -dict [list CONFIG.C_DATA_DEPTH {1024} CONFIG.C_NUM_OF_PROBES {4} CONFIG.C_TRIGIN_EN {false} CONFIG.C_ENABLE_ILA_AXI_MON {false} CONFIG.C_MONITOR_TYPE {Native}] [get_bd_cells ila_0]
+connect_bd_net [get_bd_ports sys_clk] [get_bd_pins ila_0/clk]
+connect_bd_net [get_bd_pins clk_wiz_1/locked] [get_bd_pins ila_0/probe0]
+connect_bd_net [get_bd_ports reset_n] [get_bd_pins ila_0/probe1]
+connect_bd_net [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins ila_0/probe2]
+connect_bd_net [get_bd_pins rst_clk_wiz_1_100M/peripheral_aresetn] [get_bd_pins ila_0/probe3]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+delete_bd_objs [get_bd_cells ila_0]
+delete_bd_objs [get_bd_nets sw1_1]
+connect_bd_net [get_bd_ports led0] [get_bd_pins clk_wiz_1/clk_out1]
+undo
+connect_bd_net [get_bd_ports led0] [get_bd_pins clk_wiz_1/locked]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}
+startgroup
+set_property -dict [list CONFIG.CLKOUT1_DRIVES {No_buffer} CONFIG.FEEDBACK_SOURCE {FDBK_ONCHIP}] [get_bd_cells clk_wiz_1]
+endgroup
+startgroup
+endgroup
+connect_bd_net [get_bd_pins clk_wiz_1/clkfb_out] [get_bd_pins clk_wiz_1/clkfb_in]
+disconnect_bd_net /reset_1 [get_bd_ports led3]
+connect_bd_net [get_bd_ports led3] [get_bd_pins clk_wiz_1/locked]
+disconnect_bd_net /clk_wiz_1_locked [get_bd_ports led3]
+connect_bd_net [get_bd_ports led3] [get_bd_ports sys_clk]
+undo
+connect_bd_net [get_bd_ports led3] [get_bd_pins clk_wiz_1/clk_out1]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+startgroup
+set_property -dict [list CONFIG.C_AUX_RESET_HIGH {1}] [get_bd_cells rst_clk_wiz_1_100M]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_AUX_RESET_HIGH.VALUE_SRC PROPAGATED] [get_bd_cells rst_clk_wiz_1_100M]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_AUX_RESET_HIGH.VALUE_SRC USER] [get_bd_cells rst_clk_wiz_1_100M]
+set_property -dict [list CONFIG.C_AUX_RESET_HIGH {0}] [get_bd_cells rst_clk_wiz_1_100M]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0
+endgroup
+set_property -dict [list CONFIG.C_SIZE {1} CONFIG.C_OPERATION {not} CONFIG.LOGO_FILE {data/sym_notgate.png}] [get_bd_cells util_vector_logic_0]
+set_property location {1.5 73 426} [get_bd_cells util_vector_logic_0]
+set_property location {1 -123 497} [get_bd_cells util_vector_logic_0]
+connect_bd_net [get_bd_ports reset_n] [get_bd_pins util_vector_logic_0/Op1]
+disconnect_bd_net /reset_1 [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
+connect_bd_net [get_bd_pins util_vector_logic_0/Res] [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}
+delete_bd_objs [get_bd_nets util_vector_logic_0_Res] [get_bd_cells util_vector_logic_0]
+connect_bd_net [get_bd_ports reset_n] [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
+startgroup
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+disconnect_bd_net /microblaze_0_Clk [get_bd_ports led3]
+connect_bd_net [get_bd_ports led3] [get_bd_ports sw0]
+reset_run impl_1 -prev_step 
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+disconnect_bd_net /clk_wiz_1_locked [get_bd_ports led0]
+connect_bd_net [get_bd_ports led0] [get_bd_pins rst_clk_wiz_1_100M/bus_struct_reset]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+startgroup
+set_property -dict [list CONFIG.C_USE_DIV {1} CONFIG.C_USE_HW_MUL {1} CONFIG.C_USE_ICACHE {1} CONFIG.C_ADDR_TAG_BITS {17} CONFIG.C_USE_DCACHE {1} CONFIG.C_DCACHE_ADDR_TAG {17} CONFIG.C_USE_BRANCH_TARGET_CACHE {0}] [get_bd_cells microblaze_0]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0/M_AXI_DC} Slave {/axi_uartlite_0/S_AXI} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins microblaze_0/M_AXI_DC]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0/M_AXI_IC} Slave {/axi_uartlite_0/S_AXI} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins microblaze_0/M_AXI_IC]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_bram_ctrl:4.1 axi_bram_ctrl_0
+endgroup
+set_property location {4 880 597} [get_bd_cells axi_bram_ctrl_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+endgroup
+set_property location {6 1523 578} [get_bd_cells blk_mem_gen_0]
+reset_run impl_1 -prev_step 
+delete_bd_objs [get_bd_cells axi_bram_ctrl_0] [get_bd_cells blk_mem_gen_0]
+startgroup
+set_property -dict [list CONFIG.C_USE_DIV {0} CONFIG.C_USE_HW_MUL {0} CONFIG.C_USE_ICACHE {0} CONFIG.C_ADDR_TAG_BITS {0} CONFIG.C_USE_DCACHE {0} CONFIG.C_DCACHE_ADDR_TAG {0}] [get_bd_cells microblaze_0]
+delete_bd_objs [get_bd_intf_nets microblaze_0_M_AXI_DC] [get_bd_intf_nets microblaze_0_M_AXI_IC]
+endgroup
+disconnect_bd_net /rst_clk_wiz_1_100M_bus_struct_reset [get_bd_ports led1]
+connect_bd_net [get_bd_ports led1] [get_bd_pins rst_clk_wiz_1_100M/peripheral_aresetn]
+save_bd_design
+reset_run synth_1
+reset_run base_mb_microblaze_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property location {1.5 -159 404} [get_bd_cells xlconstant_0]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins rst_clk_wiz_1_100M/aux_reset_in]
+set_property location {2 -117 452} [get_bd_cells xlconstant_0]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+create_project project_1 C:/Users/Benjamin/Documents/Word-documents/dead/project_1 -part xc7a200tfbg676-2
+set_property board_part xilinx.com:ac701:part0:1.4 [current_project]
+set_property target_language VHDL [current_project]
+create_bd_design "base_mb" -mode batch
+instantiate_example_design -template xilinx.com:design:base_mb:1.0 -design base_mb
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close_project
+startgroup
+set_property -dict [list CONFIG.C_EXT_RST_WIDTH {3}] [get_bd_cells rst_clk_wiz_1_100M]
+endgroup
+startgroup
+set_property -dict [list CONFIG.C_EXT_RST_WIDTH {4} CONFIG.C_NUM_INTERCONNECT_ARESETN {1} CONFIG.C_NUM_PERP_ARESETN {1}] [get_bd_cells rst_clk_wiz_1_100M]
+endgroup
+startgroup
+set_property -dict [list CONFIG.PRIMITIVE {PLL} CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} CONFIG.CLKOUT1_DRIVES {No_buffer} CONFIG.CLKOUT2_DRIVES {BUFG} CONFIG.CLKOUT3_DRIVES {BUFG} CONFIG.CLKOUT4_DRIVES {BUFG} CONFIG.CLKOUT5_DRIVES {BUFG} CONFIG.CLKOUT6_DRIVES {BUFG} CONFIG.CLKOUT7_DRIVES {BUFG} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9} CONFIG.MMCM_COMPENSATION {ZHOLD} CONFIG.MMCM_CLKOUT0_DIVIDE_F {9} CONFIG.CLKOUT1_JITTER {137.681} CONFIG.CLKOUT1_PHASE_ERROR {105.461}] [get_bd_cells clk_wiz_1]
+endgroup
+startgroup
+set_property -dict [list CONFIG.PRIMITIVE {PLL} CONFIG.CLKOUT1_DRIVES {No_buffer} CONFIG.CLKOUT2_DRIVES {BUFG} CONFIG.CLKOUT3_DRIVES {BUFG} CONFIG.CLKOUT4_DRIVES {BUFG} CONFIG.CLKOUT5_DRIVES {BUFG} CONFIG.CLKOUT6_DRIVES {BUFG} CONFIG.CLKOUT7_DRIVES {BUFG} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9} CONFIG.MMCM_COMPENSATION {ZHOLD} CONFIG.MMCM_CLKOUT0_DIVIDE_F {9} CONFIG.CLKOUT1_JITTER {137.681} CONFIG.CLKOUT1_PHASE_ERROR {105.461}] [get_bd_cells clk_wiz_1]
+endgroup
+save_bd_design
+reset_run synth_1
+reset_run base_mb_clk_wiz_1_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.sysdef C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+
+launch_sdk -workspace C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/impl_1/base_mb_wrapper.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+open_bd_design {C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb.bd}

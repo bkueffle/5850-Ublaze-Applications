@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Apr  5 12:48:18 2019
+-- Date        : Fri Apr  5 20:54:54 2019
 -- Host        : Drew running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/Benjamin/Documents/Word documents/CPP/ECE
---               5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_sim_netlist.vhdl
 -- Design      : base_mb_microblaze_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -58614,7 +58614,7 @@ entity base_mb_microblaze_0_0_MicroBlaze is
     M_AXI_DC_CDREADY : in STD_LOGIC
   );
   attribute C_ADDR_TAG_BITS : integer;
-  attribute C_ADDR_TAG_BITS of base_mb_microblaze_0_0_MicroBlaze : entity is 17;
+  attribute C_ADDR_TAG_BITS of base_mb_microblaze_0_0_MicroBlaze : entity is 0;
   attribute C_ALLOW_DCACHE_WR : integer;
   attribute C_ALLOW_DCACHE_WR of base_mb_microblaze_0_0_MicroBlaze : entity is 1;
   attribute C_ALLOW_ICACHE_WR : integer;
@@ -58638,7 +58638,7 @@ entity base_mb_microblaze_0_0_MicroBlaze is
   attribute C_DATA_SIZE : integer;
   attribute C_DATA_SIZE of base_mb_microblaze_0_0_MicroBlaze : entity is 32;
   attribute C_DCACHE_ADDR_TAG : integer;
-  attribute C_DCACHE_ADDR_TAG of base_mb_microblaze_0_0_MicroBlaze : entity is 17;
+  attribute C_DCACHE_ADDR_TAG of base_mb_microblaze_0_0_MicroBlaze : entity is 0;
   attribute C_DCACHE_ALWAYS_USED : integer;
   attribute C_DCACHE_ALWAYS_USED of base_mb_microblaze_0_0_MicroBlaze : entity is 0;
   attribute C_DCACHE_BASEADDR : string;
@@ -58704,7 +58704,7 @@ entity base_mb_microblaze_0_0_MicroBlaze is
   attribute C_IADDR_SIZE : integer;
   attribute C_IADDR_SIZE of base_mb_microblaze_0_0_MicroBlaze : entity is 32;
   attribute C_ICACHE_ALWAYS_USED : integer;
-  attribute C_ICACHE_ALWAYS_USED of base_mb_microblaze_0_0_MicroBlaze : entity is 0;
+  attribute C_ICACHE_ALWAYS_USED of base_mb_microblaze_0_0_MicroBlaze : entity is 1;
   attribute C_ICACHE_BASEADDR : string;
   attribute C_ICACHE_BASEADDR of base_mb_microblaze_0_0_MicroBlaze : entity is "64'b0000000000000000000000000000000000000000000000000000000000000000";
   attribute C_ICACHE_DATA_WIDTH : integer;
@@ -72142,7 +72142,7 @@ architecture STRUCTURE of base_mb_microblaze_0_0 is
   signal NLW_U0_Trace_PID_Reg_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 7 );
   signal NLW_U0_Trace_Reg_Addr_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 4 );
   attribute C_ADDR_TAG_BITS : integer;
-  attribute C_ADDR_TAG_BITS of U0 : label is 17;
+  attribute C_ADDR_TAG_BITS of U0 : label is 0;
   attribute C_ALLOW_DCACHE_WR : integer;
   attribute C_ALLOW_DCACHE_WR of U0 : label is 1;
   attribute C_ALLOW_ICACHE_WR : integer;
@@ -72166,7 +72166,7 @@ architecture STRUCTURE of base_mb_microblaze_0_0 is
   attribute C_DATA_SIZE : integer;
   attribute C_DATA_SIZE of U0 : label is 32;
   attribute C_DCACHE_ADDR_TAG : integer;
-  attribute C_DCACHE_ADDR_TAG of U0 : label is 17;
+  attribute C_DCACHE_ADDR_TAG of U0 : label is 0;
   attribute C_DCACHE_ALWAYS_USED : integer;
   attribute C_DCACHE_ALWAYS_USED of U0 : label is 0;
   attribute C_DCACHE_BASEADDR : string;
@@ -72232,7 +72232,7 @@ architecture STRUCTURE of base_mb_microblaze_0_0 is
   attribute C_IADDR_SIZE : integer;
   attribute C_IADDR_SIZE of U0 : label is 32;
   attribute C_ICACHE_ALWAYS_USED : integer;
-  attribute C_ICACHE_ALWAYS_USED of U0 : label is 0;
+  attribute C_ICACHE_ALWAYS_USED of U0 : label is 1;
   attribute C_ICACHE_BASEADDR : string;
   attribute C_ICACHE_BASEADDR of U0 : label is "64'b0000000000000000000000000000000000000000000000000000000000000000";
   attribute C_ICACHE_DATA_WIDTH : integer;

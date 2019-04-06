@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="base_mb" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1554494585"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1554494585"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1554494585"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1554494585"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1554526861"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1554526861"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1554526861"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1554526861"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\base_mb_microblaze_0_0\base_mb_microblaze_0_0.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0"/>
@@ -119,6 +119,14 @@
       <File Name="sim\base_mb.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\base_mb_xlconstant_0_0\base_mb_xlconstant_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconstant_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="base_mb.bmm" Type="BMM">

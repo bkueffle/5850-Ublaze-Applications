@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1'
+HD_PWD='C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

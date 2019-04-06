@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
 // Date        : Fri Apr  5 12:48:13 2019
 // Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/Benjamin/Documents/Word documents/CPP/ECE
-//               5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_ilmb_bram_if_cntlr_0/base_mb_ilmb_bram_if_cntlr_0_stub.v}
+// Command     : write_verilog -force -mode synth_stub -rename_top base_mb_ilmb_bram_if_cntlr_0 -prefix
+//               base_mb_ilmb_bram_if_cntlr_0_ base_mb_ilmb_bram_if_cntlr_0_stub.v
 // Design      : base_mb_ilmb_bram_if_cntlr_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1

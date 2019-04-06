@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Apr  5 12:49:11 2019
+-- Date        : Fri Apr  5 22:01:44 2019
 -- Host        : Drew running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {c:/Users/Benjamin/Documents/Word documents/CPP/ECE
---               5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_clk_wiz_1_0/base_mb_clk_wiz_1_0_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub
+--               C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_clk_wiz_1_0/base_mb_clk_wiz_1_0_stub.vhdl
 -- Design      : base_mb_clk_wiz_1_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1
@@ -14,7 +14,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity base_mb_clk_wiz_1_0 is
   Port ( 
+    clkfb_in : in STD_LOGIC;
     clk_out1 : out STD_LOGIC;
+    clkfb_out : out STD_LOGIC;
     resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
@@ -26,6 +28,6 @@ architecture stub of base_mb_clk_wiz_1_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk_out1,resetn,locked,clk_in1";
+attribute black_box_pad_pin of stub : architecture is "clkfb_in,clk_out1,clkfb_out,resetn,locked,clk_in1";
 begin
 end;

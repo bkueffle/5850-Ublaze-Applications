@@ -14,11 +14,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9700 
+INFO: Helper process launched with PID 12748 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 400.801 ; gain = 104.605
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 401.141 ; gain = 104.469
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'base_mb_microblaze_0_0' [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/synth/base_mb_microblaze_0_0.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'base_mb_microblaze_0_0' [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/synth/base_mb_microblaze_0_0.vhd:116]
 	Parameter C_SCO bound to: 0 - type: integer 
 	Parameter C_FREQ bound to: 100000000 - type: integer 
 	Parameter C_USE_CONFIG_RESET bound to: 0 - type: integer 
@@ -145,10 +145,10 @@ INFO: [Synth 8-638] synthesizing module 'base_mb_microblaze_0_0' [c:/Users/Benja
 	Parameter C_ICACHE_HIGHADDR bound to: 64'b0000000000000000000000000000000000111111111111111111111111111111 
 	Parameter C_USE_ICACHE bound to: 0 - type: integer 
 	Parameter C_ALLOW_ICACHE_WR bound to: 1 - type: integer 
-	Parameter C_ADDR_TAG_BITS bound to: 17 - type: integer 
+	Parameter C_ADDR_TAG_BITS bound to: 0 - type: integer 
 	Parameter C_CACHE_BYTE_SIZE bound to: 8192 - type: integer 
 	Parameter C_ICACHE_LINE_LEN bound to: 4 - type: integer 
-	Parameter C_ICACHE_ALWAYS_USED bound to: 0 - type: integer 
+	Parameter C_ICACHE_ALWAYS_USED bound to: 1 - type: integer 
 	Parameter C_ICACHE_STREAMS bound to: 0 - type: integer 
 	Parameter C_ICACHE_VICTIMS bound to: 0 - type: integer 
 	Parameter C_ICACHE_FORCE_TAG_LUTRAM bound to: 0 - type: integer 
@@ -166,7 +166,7 @@ INFO: [Synth 8-638] synthesizing module 'base_mb_microblaze_0_0' [c:/Users/Benja
 	Parameter C_DCACHE_HIGHADDR bound to: 64'b0000000000000000000000000000000000111111111111111111111111111111 
 	Parameter C_USE_DCACHE bound to: 0 - type: integer 
 	Parameter C_ALLOW_DCACHE_WR bound to: 1 - type: integer 
-	Parameter C_DCACHE_ADDR_TAG bound to: 17 - type: integer 
+	Parameter C_DCACHE_ADDR_TAG bound to: 0 - type: integer 
 	Parameter C_DCACHE_BYTE_SIZE bound to: 8192 - type: integer 
 	Parameter C_DCACHE_LINE_LEN bound to: 4 - type: integer 
 	Parameter C_DCACHE_ALWAYS_USED bound to: 0 - type: integer 
@@ -184,8 +184,8 @@ INFO: [Synth 8-638] synthesizing module 'base_mb_microblaze_0_0' [c:/Users/Benja
 	Parameter C_M_AXI_DC_WUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_AXI_DC_RUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_AXI_DC_BUSER_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'MicroBlaze' declared at 'c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ipshared/2ed1/hdl/microblaze_v11_0_vh_rfs.vhd:162656' bound to instance 'U0' of component 'MicroBlaze' [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/synth/base_mb_microblaze_0_0.vhd:807]
-INFO: [Synth 8-256] done synthesizing module 'base_mb_microblaze_0_0' (52#1) [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/synth/base_mb_microblaze_0_0.vhd:116]
+INFO: [Synth 8-3491] module 'MicroBlaze' declared at 'c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ipshared/2ed1/hdl/microblaze_v11_0_vh_rfs.vhd:162656' bound to instance 'U0' of component 'MicroBlaze' [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/synth/base_mb_microblaze_0_0.vhd:807]
+INFO: [Synth 8-256] done synthesizing module 'base_mb_microblaze_0_0' (52#1) [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/synth/base_mb_microblaze_0_0.vhd:116]
 WARNING: [Synth 8-3331] design MB_SRLC16E has unconnected port Config_Reset
 WARNING: [Synth 8-3331] design address_hit has unconnected port TDI[7]
 WARNING: [Synth 8-3331] design address_hit has unconnected port TDI[6]
@@ -288,7 +288,7 @@ WARNING: [Synth 8-3331] design Debug has unconnected port RAM_Debug_Trace_To[172
 WARNING: [Synth 8-3331] design Debug has unconnected port RAM_Debug_Trace_To[171]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 634.637 ; gain = 338.441
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 635.223 ; gain = 338.551
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -301,10 +301,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 634.637 ; gain = 338.441
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 635.223 ; gain = 338.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 634.637 ; gain = 338.441
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 635.223 ; gain = 338.551
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 611 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -313,20 +313,20 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc_debug.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc_debug.xdc] for cell 'U0'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc.xdc] for cell 'U0'
-Parsing XDC File [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0.xdc] for cell 'U0'
-Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0.xdc] for cell 'U0'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/base_mb_microblaze_0_0_propImpl.xdc].
+Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc_debug.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc_debug.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0.xdc] for cell 'U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/base_mb_microblaze_0_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/base_mb_microblaze_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 854.910 ; gain = 0.000
-Parsing XDC File [C:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 856.008 ; gain = 0.000
+Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 855.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 856.469 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 409 instances were transformed.
   FDE => FDRE: 32 instances
@@ -337,24 +337,24 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   MUXCY_L => MUXCY: 137 instances
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 16 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 855.309 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.149 . Memory (MB): peak = 856.625 ; gain = 1.316
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 856.469 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 857.785 ; gain = 1.316
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:47 ; elapsed = 00:01:10 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 857.785 ; gain = 561.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:47 ; elapsed = 00:01:10 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 857.785 ; gain = 561.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  {C:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/dont_touch.xdc}, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:01:10 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 857.785 ; gain = 561.113
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "EX_Pattern_Cmp_Sel" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ex_gpr_write" won't be mapped to RAM because it is too sparse
@@ -380,7 +380,7 @@ INFO: [Synth 8-5546] ROM "Command_Reg_En" won't be mapped to RAM because it is t
 INFO: [Synth 8-5546] ROM "which_pc" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "dbg_hit" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:56 ; elapsed = 00:01:20 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 857.785 ; gain = 561.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -848,7 +848,7 @@ INFO: [Synth 8-3886] merging instance 'U0/LOCKSTEP_Out_reg[547]' (FDR) to 'U0/LO
 INFO: [Synth 8-3886] merging instance 'U0/LOCKSTEP_Out_reg[546]' (FDR) to 'U0/LOCKSTEP_Out_reg[539]'
 INFO: [Synth 8-3886] merging instance 'U0/LOCKSTEP_Out_reg[542]' (FDR) to 'U0/LOCKSTEP_Out_reg[539]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:17 ; elapsed = 00:01:42 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 857.785 ; gain = 561.113
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -860,13 +860,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:31 ; elapsed = 00:01:57 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 857.785 ; gain = 561.113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:02:00 . Memory (MB): peak = 856.625 ; gain = 560.430
+Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:57 . Memory (MB): peak = 859.922 ; gain = 563.250
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -878,7 +878,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:38 ; elapsed = 00:02:04 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:59 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -902,7 +902,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -915,7 +915,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:40 ; elapsed = 00:02:06 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -927,25 +927,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:41 ; elapsed = 00:02:07 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:41 ; elapsed = 00:02:07 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:41 ; elapsed = 00:02:07 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:41 ; elapsed = 00:02:07 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1648,17 +1648,17 @@ Report Instance Areas:
 |643   |      \Using_Async_Wakeup_1.Wakeup_DFF                                           |mb_sync_bit_1                  |     2|
 +------+---------------------------------------------------------------------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:41 ; elapsed = 00:02:07 . Memory (MB): peak = 867.023 ; gain = 570.828
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 872.090 ; gain = 575.418
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 10074 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:40 . Memory (MB): peak = 867.023 ; gain = 348.840
-Synthesis Optimization Complete : Time (s): cpu = 00:01:41 ; elapsed = 00:02:08 . Memory (MB): peak = 867.023 ; gain = 570.828
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:51 . Memory (MB): peak = 872.090 ; gain = 352.855
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 872.090 ; gain = 575.418
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 557 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 867.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 872.090 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 255 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 38 instances
@@ -1672,16 +1672,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 267 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:46 ; elapsed = 00:02:13 . Memory (MB): peak = 867.023 ; gain = 579.414
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 867.023 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 872.090 ; gain = 584.188
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 872.090 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/base_mb_microblaze_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP base_mb_microblaze_0_0, cache-ID = 36557660b5d694db
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/base_mb_microblaze_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP base_mb_microblaze_0_0, cache-ID = eee064cd1d291542
 INFO: [Coretcl 2-1174] Renamed 642 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 867.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 872.090 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word documents/CPP/ECE 5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/base_mb_microblaze_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/base_mb_microblaze_0_0_synth_1/base_mb_microblaze_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file base_mb_microblaze_0_0_utilization_synth.rpt -pb base_mb_microblaze_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 12:48:20 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Apr  5 20:54:55 2019...

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Fri Apr  5 12:48:17 2019
+// Date        : Fri Apr  5 20:54:53 2019
 // Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/Benjamin/Documents/Word documents/CPP/ECE
-//               5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_sim_netlist.v}
+// Command     : write_verilog -force -mode funcsim
+//               C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_sim_netlist.v
 // Design      : base_mb_microblaze_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -418,7 +418,7 @@ module base_mb_microblaze_0_0
   wire [0:7]NLW_U0_Trace_PID_Reg_UNCONNECTED;
   wire [0:4]NLW_U0_Trace_Reg_Addr_UNCONNECTED;
 
-  (* C_ADDR_TAG_BITS = "17" *) 
+  (* C_ADDR_TAG_BITS = "0" *) 
   (* C_ALLOW_DCACHE_WR = "1" *) 
   (* C_ALLOW_ICACHE_WR = "1" *) 
   (* C_AREA_OPTIMIZED = "0" *) 
@@ -430,7 +430,7 @@ module base_mb_microblaze_0_0
   (* C_CACHE_BYTE_SIZE = "8192" *) 
   (* C_DADDR_SIZE = "32" *) 
   (* C_DATA_SIZE = "32" *) 
-  (* C_DCACHE_ADDR_TAG = "17" *) 
+  (* C_DCACHE_ADDR_TAG = "0" *) 
   (* C_DCACHE_ALWAYS_USED = "0" *) 
   (* C_DCACHE_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
   (* C_DCACHE_BYTE_SIZE = "8192" *) 
@@ -463,7 +463,7 @@ module base_mb_microblaze_0_0
   (* C_FSL_EXCEPTION = "0" *) 
   (* C_FSL_LINKS = "0" *) 
   (* C_IADDR_SIZE = "32" *) 
-  (* C_ICACHE_ALWAYS_USED = "0" *) 
+  (* C_ICACHE_ALWAYS_USED = "1" *) 
   (* C_ICACHE_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
   (* C_ICACHE_DATA_WIDTH = "0" *) 
   (* C_ICACHE_FORCE_TAG_LUTRAM = "0" *) 
@@ -41822,11 +41822,11 @@ module base_mb_microblaze_0_0_MB_SRLC16E_44
         .Q15(SRL16_MC15_1));
 endmodule
 
-(* C_ADDR_TAG_BITS = "17" *) (* C_ALLOW_DCACHE_WR = "1" *) (* C_ALLOW_ICACHE_WR = "1" *) 
+(* C_ADDR_TAG_BITS = "0" *) (* C_ALLOW_DCACHE_WR = "1" *) (* C_ALLOW_ICACHE_WR = "1" *) 
 (* C_AREA_OPTIMIZED = "0" *) (* C_ASYNC_INTERRUPT = "1" *) (* C_ASYNC_WAKEUP = "3" *) 
 (* C_AVOID_PRIMITIVES = "0" *) (* C_BASE_VECTORS = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_BRANCH_TARGET_CACHE_SIZE = "0" *) 
 (* C_CACHE_BYTE_SIZE = "8192" *) (* C_DADDR_SIZE = "32" *) (* C_DATA_SIZE = "32" *) 
-(* C_DCACHE_ADDR_TAG = "17" *) (* C_DCACHE_ALWAYS_USED = "0" *) (* C_DCACHE_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
+(* C_DCACHE_ADDR_TAG = "0" *) (* C_DCACHE_ALWAYS_USED = "0" *) (* C_DCACHE_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
 (* C_DCACHE_BYTE_SIZE = "8192" *) (* C_DCACHE_DATA_WIDTH = "0" *) (* C_DCACHE_FORCE_TAG_LUTRAM = "0" *) 
 (* C_DCACHE_HIGHADDR = "64'b0000000000000000000000000000000000111111111111111111111111111111" *) (* C_DCACHE_LINE_LEN = "4" *) (* C_DCACHE_USE_WRITEBACK = "0" *) 
 (* C_DCACHE_VICTIMS = "0" *) (* C_DEBUG_COUNTER_WIDTH = "32" *) (* C_DEBUG_ENABLED = "1" *) 
@@ -41837,7 +41837,7 @@ endmodule
 (* C_EDGE_IS_POSITIVE = "1" *) (* C_ENDIANNESS = "1" *) (* C_FAMILY = "spartan7" *) 
 (* C_FAULT_TOLERANT = "0" *) (* C_FPU_EXCEPTION = "0" *) (* C_FREQ = "100000000" *) 
 (* C_FSL_EXCEPTION = "0" *) (* C_FSL_LINKS = "0" *) (* C_IADDR_SIZE = "32" *) 
-(* C_ICACHE_ALWAYS_USED = "0" *) (* C_ICACHE_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_ICACHE_DATA_WIDTH = "0" *) 
+(* C_ICACHE_ALWAYS_USED = "1" *) (* C_ICACHE_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* C_ICACHE_DATA_WIDTH = "0" *) 
 (* C_ICACHE_FORCE_TAG_LUTRAM = "0" *) (* C_ICACHE_HIGHADDR = "64'b0000000000000000000000000000000000111111111111111111111111111111" *) (* C_ICACHE_LINE_LEN = "4" *) 
 (* C_ICACHE_STREAMS = "0" *) (* C_ICACHE_VICTIMS = "0" *) (* C_ILL_OPCODE_EXCEPTION = "0" *) 
 (* C_IMPRECISE_EXCEPTIONS = "0" *) (* C_INSTANCE = "base_mb_microblaze_0_0" *) (* C_INSTR_SIZE = "32" *) 

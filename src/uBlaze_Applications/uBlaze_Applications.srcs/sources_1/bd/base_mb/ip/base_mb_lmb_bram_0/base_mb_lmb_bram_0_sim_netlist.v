@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
 // Date        : Fri Apr  5 12:48:43 2019
 // Host        : Drew running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/Benjamin/Documents/Word documents/CPP/ECE
-//               5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_lmb_bram_0/base_mb_lmb_bram_0_sim_netlist.v}
+// Command     : write_verilog -force -mode funcsim -rename_top base_mb_lmb_bram_0 -prefix
+//               base_mb_lmb_bram_0_ base_mb_lmb_bram_0_sim_netlist.v
 // Design      : base_mb_lmb_bram_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -224,7 +224,6 @@ module base_mb_lmb_bram_0
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module base_mb_lmb_bram_0_blk_mem_gen_generic_cstr
    (douta,
     doutb,
@@ -408,7 +407,6 @@ module base_mb_lmb_bram_0_blk_mem_gen_generic_cstr
         .web(web[3]));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module base_mb_lmb_bram_0_blk_mem_gen_prim_width
    (douta,
     doutb,
@@ -1100,7 +1098,6 @@ module base_mb_lmb_bram_0_blk_mem_gen_prim_width__parameterized6
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module base_mb_lmb_bram_0_blk_mem_gen_prim_wrapper
    (douta,
     doutb,
@@ -3300,7 +3297,6 @@ module base_mb_lmb_bram_0_blk_mem_gen_prim_wrapper__parameterized6
         .O(ram_rstram_b));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module base_mb_lmb_bram_0_blk_mem_gen_top
    (douta,
     doutb,
@@ -3396,7 +3392,7 @@ endmodule
 (* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) (* C_WRITE_DEPTH_A = "8192" *) 
 (* C_WRITE_DEPTH_B = "8192" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) (* C_XDEVICEFAMILY = "spartan7" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module base_mb_lmb_bram_0_blk_mem_gen_v8_4_2
    (clka,
     rsta,
@@ -3682,7 +3678,6 @@ module base_mb_lmb_bram_0_blk_mem_gen_v8_4_2
         .web(web));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_2_synth" *) 
 module base_mb_lmb_bram_0_blk_mem_gen_v8_4_2_synth
    (douta,
     doutb,

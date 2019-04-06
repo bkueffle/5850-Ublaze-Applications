@@ -7,7 +7,17 @@
 #set_property -dict { PACKAGE_PIN F14   IOSTANDARD LVCMOS33 } [get_ports { CLK12MHZ }]; #IO_L13P_T2_MRCC_15 Sch=uclk
 #create_clock -add -name sys_clk_pin -period 83.333 -waveform {0 41.667} [get_ports { CLK12MHZ }];
 
+## LEDs
+set_property -dict { PACKAGE_PIN E18   IOSTANDARD LVCMOS33 } [get_ports { led0 }]; #IO_L16N_T2_A27_15 Sch=led[2]
+set_property -dict { PACKAGE_PIN F13   IOSTANDARD LVCMOS33 } [get_ports { led1 }]; #IO_L17P_T2_A26_15 Sch=led[3]
+set_property -dict { PACKAGE_PIN E13   IOSTANDARD LVCMOS33 } [get_ports { led2 }]; #IO_L17N_T2_A25_15 Sch=led[4]
+set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { led3 }]; #IO_L18P_T2_A24_15 Sch=led[5]
 
+## Switches
+set_property -dict { PACKAGE_PIN H14   IOSTANDARD LVCMOS33 } [get_ports { sw0 }]; #IO_L20N_T3_A19_15 Sch=sw[0]
+#set_property -dict { PACKAGE_PIN H18   IOSTANDARD LVCMOS33 } [get_ports { board_switch[1] }]; #IO_L21P_T3_DQS_15 Sch=sw[1]
+#set_property -dict { PACKAGE_PIN G18   IOSTANDARD LVCMOS33 } [get_ports { board_switch[2] }]; #IO_L21N_T3_DQS_A18_15 Sch=sw[2]
+#set_property -dict { PACKAGE_PIN M5    IOSTANDARD SSTL135 } [get_ports { board_switch[3] }]; #IO_L6N_T0_VREF_34 Sch=sw[3]
 
 set_property -dict {PACKAGE_PIN R2 IOSTANDARD SSTL135} [get_ports sys_clk]
 set_property -dict { PACKAGE_PIN R2    IOSTANDARD SSTL135 } [get_ports { sys_clk }];
@@ -84,19 +94,11 @@ set_property -dict { PACKAGE_PIN E14   IOSTANDARD LVCMOS33 } [get_ports { gpio_t
 #set_property -dict {PACKAGE_PIN P5 IOSTANDARD SSTL135} [get_ports {ddr3_odt[0]}]
 #set_property -dict {PACKAGE_PIN R3 IOSTANDARD SSTL135} [get_ports {ddr3_cs_n[0]}]
 
-## Switches
-#set_property -dict { PACKAGE_PIN H14   IOSTANDARD LVCMOS33 } [get_ports { sw[0] }]; #IO_L20N_T3_A19_15 Sch=sw[0]
-#set_property -dict { PACKAGE_PIN H18   IOSTANDARD LVCMOS33 } [get_ports { sw[1] }]; #IO_L21P_T3_DQS_15 Sch=sw[1]
-#set_property -dict { PACKAGE_PIN G18   IOSTANDARD LVCMOS33 } [get_ports { sw[2] }]; #IO_L21N_T3_DQS_A18_15 Sch=sw[2]
-#set_property -dict { PACKAGE_PIN M5    IOSTANDARD SSTL135 } [get_ports { sw[3] }]; #IO_L6N_T0_VREF_34 Sch=sw[3]
+
 
 ## RGB LEDs
 
-## LEDs
-#set_property -dict { PACKAGE_PIN E18   IOSTANDARD LVCMOS33 } [get_ports { led[0] }]; #IO_L16N_T2_A27_15 Sch=led[2]
-#set_property -dict { PACKAGE_PIN F13   IOSTANDARD LVCMOS33 } [get_ports { led[1] }]; #IO_L17P_T2_A26_15 Sch=led[3]
-#set_property -dict { PACKAGE_PIN E13   IOSTANDARD LVCMOS33 } [get_ports { led[2] }]; #IO_L17N_T2_A25_15 Sch=led[4]
-#set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { led[3] }]; #IO_L18P_T2_A24_15 Sch=led[5]
+
 
 ## Buttons
 #set_property -dict { PACKAGE_PIN G15   IOSTANDARD LVCMOS33 } [get_ports { btn[0] }]; #IO_L18N_T2_A23_15 Sch=btn[0]
