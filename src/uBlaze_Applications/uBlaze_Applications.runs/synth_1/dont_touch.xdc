@@ -48,4 +48,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==base_mb_xbar_0 
 # IP: bd/base_mb/ip/base_mb_xlconstant_0_0/base_mb_xlconstant_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==base_mb_xlconstant_0_0 || ORIG_REF_NAME==base_mb_xlconstant_0_0} -quiet] -quiet
 
+# IP: bd/base_mb/ip/base_mb_axi_timer_0_0/base_mb_axi_timer_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==base_mb_axi_timer_0_0 || ORIG_REF_NAME==base_mb_axi_timer_0_0} -quiet] -quiet
+
 # XDC: bd/base_mb/base_mb_ooc.xdc

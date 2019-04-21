@@ -48,14 +48,39 @@
 #include <stdio.h>
 #include "platform.h"
 #include "xil_printf.h"
+#include "xil_io.h"
+#include "sleep.h"
 
-
+//XPAR_AXI_TIMER_0_BASEADDR
 int main()
 {
     init_platform();
 
-    print("Hello World\n\r");
+    print("Hello ECE 5850!\n\r");
+    
+    int uart_rx;
+    while(1){
+    	// Loop forever
+    	uart_rx = 0;
+    	while(uart_rx == 0){
+    		// Loop until the RX FIFO is not empty
+    		
+    		// Sleep for 1 us
+    		usleep(1);
+    		
+			// Check to see if the RX FIFO is empty
+			uart_rx = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + 0x08) & 0x01;
 
+    		//Xil_Out32(XPAR_AXI_GPIO_0_BASEADDR,0xff);
+    	
+    	};
+    	// Read the RX register
+    	uart_rx = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + 0x00);
+    	
+    	// Print the character from the RX register
+		xil_printf("%c", uart_rx);
+	};
+	
     cleanup_platform();
     return 0;
 }

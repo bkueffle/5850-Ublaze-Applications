@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7s50csga324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -59,6 +58,8 @@ set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Docu
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_axi_gpio_0_0/base_mb_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_axi_gpio_0_0/base_mb_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_xbar_0/base_mb_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_axi_timer_0_0/base_mb_axi_timer_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_axi_timer_0_0/base_mb_axi_timer_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/base_mb_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

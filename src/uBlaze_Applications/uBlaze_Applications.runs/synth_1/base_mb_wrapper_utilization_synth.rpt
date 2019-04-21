@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Fri Apr  5 22:02:26 2019
+| Date         : Sat Apr 20 14:35:17 2019
 | Host         : Drew running 64-bit major release  (build 9200)
 | Command      : report_utilization -file base_mb_wrapper_utilization_synth.rpt -pb base_mb_wrapper_utilization_synth.pb
 | Design       : base_mb_wrapper
@@ -145,8 +145,9 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |   11 |                  IO |
-| IBUF     |    3 |                  IO |
+| IBUF     |    9 |                  IO |
+| OBUFT    |    6 |                  IO |
+| OBUF     |    5 |                  IO |
 +----------+------+---------------------+
 
 
@@ -167,6 +168,7 @@ Table of Contents
 | base_mb_dlmb_bram_if_cntlr_0 |    1 |
 | base_mb_clk_wiz_1_0          |    1 |
 | base_mb_axi_uartlite_0_0     |    1 |
+| base_mb_axi_timer_0_0        |    1 |
 | base_mb_axi_gpio_0_0         |    1 |
 +------------------------------+------+
 

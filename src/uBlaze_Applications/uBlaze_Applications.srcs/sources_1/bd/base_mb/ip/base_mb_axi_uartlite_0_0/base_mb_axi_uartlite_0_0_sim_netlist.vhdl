@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Apr  5 12:48:58 2019
+-- Date        : Sat Apr 20 13:03:56 2019
 -- Host        : Drew running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top base_mb_axi_uartlite_0_0 -prefix
---               base_mb_axi_uartlite_0_0_ base_mb_axi_uartlite_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_axi_uartlite_0_0/base_mb_axi_uartlite_0_0_sim_netlist.vhdl
 -- Design      : base_mb_axi_uartlite_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,116 +20,218 @@ entity base_mb_axi_uartlite_0_0_baudrate is
     EN_16x_Baud_reg_0 : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_baudrate : entity is "baudrate";
 end base_mb_axi_uartlite_0_0_baudrate;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_baudrate is
-  signal count : STD_LOGIC_VECTOR ( 5 downto 0 );
-  signal \count[0]_i_1_n_0\ : STD_LOGIC;
-  signal \count[1]_i_1_n_0\ : STD_LOGIC;
-  signal \count[2]_i_1_n_0\ : STD_LOGIC;
-  signal \count[3]_i_1_n_0\ : STD_LOGIC;
-  signal \count[4]_i_1_n_0\ : STD_LOGIC;
-  signal \count[5]_i_1_n_0\ : STD_LOGIC;
-  signal p_0_in : STD_LOGIC;
+  signal EN_16x_Baud : STD_LOGIC;
+  signal count : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal \count[2]_i_2_n_0\ : STD_LOGIC;
+  signal \count[4]_i_2_n_0\ : STD_LOGIC;
+  signal \count[4]_i_3_n_0\ : STD_LOGIC;
+  signal \count[9]_i_2_n_0\ : STD_LOGIC;
+  signal count_0 : STD_LOGIC_VECTOR ( 9 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \count[2]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \count[4]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \count[1]_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \count[2]_i_2\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \count[3]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \count[4]_i_2\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \count[4]_i_3\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \count[9]_i_2\ : label is "soft_lutpair13";
 begin
-EN_16x_Baud: unisim.vcomponents.LUT6
+EN_16x_Baud_i_1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000000001"
     )
         port map (
-      I0 => count(4),
-      I1 => count(3),
-      I2 => count(5),
-      I3 => count(0),
-      I4 => count(1),
-      I5 => count(2),
-      O => p_0_in
+      I0 => \count[9]_i_2_n_0\,
+      I1 => count(5),
+      I2 => count(6),
+      I3 => count(9),
+      I4 => count(7),
+      I5 => count(8),
+      O => EN_16x_Baud
     );
 EN_16x_Baud_reg: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => p_0_in,
+      D => EN_16x_Baud,
       Q => p_2_out(0),
       R => EN_16x_Baud_reg_0
     );
-\count[0]_i_1\: unisim.vcomponents.LUT1
+\count[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"1"
+      INIT => X"0000FFFF0000FFFE"
     )
         port map (
-      I0 => count(0),
-      O => \count[0]_i_1_n_0\
+      I0 => count(3),
+      I1 => count(4),
+      I2 => \count[2]_i_2_n_0\,
+      I3 => count(2),
+      I4 => count(0),
+      I5 => count(1),
+      O => count_0(0)
     );
-\count[1]_i_1\: unisim.vcomponents.LUT6
+\count[1]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => count(1),
+      I1 => count(0),
+      O => count_0(1)
+    );
+\count[2]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"E1E1E1E1E1E1E1E0"
+    )
+        port map (
+      I0 => count(1),
+      I1 => count(0),
+      I2 => count(2),
+      I3 => \count[2]_i_2_n_0\,
+      I4 => count(4),
+      I5 => count(3),
+      O => count_0(2)
+    );
+\count[2]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFFFFFE"
+    )
+        port map (
+      I0 => count(9),
+      I1 => count(7),
+      I2 => count(8),
+      I3 => count(6),
+      I4 => count(5),
+      O => \count[2]_i_2_n_0\
+    );
+\count[3]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"AAA9"
+    )
+        port map (
+      I0 => count(3),
+      I1 => count(1),
+      I2 => count(0),
+      I3 => count(2),
+      O => count_0(3)
+    );
+\count[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"A9A9A9A9A9A9A9A8"
+    )
+        port map (
+      I0 => count(4),
+      I1 => count(3),
+      I2 => \count[4]_i_2_n_0\,
+      I3 => \count[4]_i_3_n_0\,
+      I4 => count(6),
+      I5 => count(5),
+      O => count_0(4)
+    );
+\count[4]_i_2\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"FE"
+    )
+        port map (
+      I0 => count(1),
+      I1 => count(0),
+      I2 => count(2),
+      O => \count[4]_i_2_n_0\
+    );
+\count[4]_i_3\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"FE"
+    )
+        port map (
+      I0 => count(8),
+      I1 => count(7),
+      I2 => count(9),
+      O => \count[4]_i_3_n_0\
+    );
+\count[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FFFF00000000FFFE"
     )
         port map (
-      I0 => count(2),
-      I1 => count(3),
-      I2 => count(4),
-      I3 => count(5),
-      I4 => count(1),
-      I5 => count(0),
-      O => \count[1]_i_1_n_0\
+      I0 => count(9),
+      I1 => count(7),
+      I2 => count(8),
+      I3 => count(6),
+      I4 => count(5),
+      I5 => \count[9]_i_2_n_0\,
+      O => count_0(5)
     );
-\count[2]_i_1\: unisim.vcomponents.LUT3
+\count[6]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"A9"
+      INIT => X"A9A9A9A9A9A9A9A8"
     )
         port map (
-      I0 => count(2),
-      I1 => count(1),
-      I2 => count(0),
-      O => \count[2]_i_1_n_0\
+      I0 => count(6),
+      I1 => count(5),
+      I2 => \count[9]_i_2_n_0\,
+      I3 => count(8),
+      I4 => count(7),
+      I5 => count(9),
+      O => count_0(6)
     );
-\count[3]_i_1\: unisim.vcomponents.LUT6
+\count[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"F0F0F0F0F0F0F00E"
+      INIT => X"AAA9"
+    )
+        port map (
+      I0 => count(7),
+      I1 => count(6),
+      I2 => count(5),
+      I3 => \count[9]_i_2_n_0\,
+      O => count_0(7)
+    );
+\count[8]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FF00FE01FF00FE00"
+    )
+        port map (
+      I0 => \count[9]_i_2_n_0\,
+      I1 => count(5),
+      I2 => count(6),
+      I3 => count(8),
+      I4 => count(7),
+      I5 => count(9),
+      O => count_0(8)
+    );
+\count[9]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"F0F0F0F0F0F0F0E1"
+    )
+        port map (
+      I0 => count(8),
+      I1 => count(7),
+      I2 => count(9),
+      I3 => count(6),
+      I4 => count(5),
+      I5 => \count[9]_i_2_n_0\,
+      O => count_0(9)
+    );
+\count[9]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFFFFFE"
     )
         port map (
       I0 => count(4),
-      I1 => count(5),
-      I2 => count(3),
-      I3 => count(2),
+      I1 => count(3),
+      I2 => count(2),
+      I3 => count(0),
       I4 => count(1),
-      I5 => count(0),
-      O => \count[3]_i_1_n_0\
-    );
-\count[4]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFE0001"
-    )
-        port map (
-      I0 => count(2),
-      I1 => count(3),
-      I2 => count(1),
-      I3 => count(0),
-      I4 => count(4),
-      O => \count[4]_i_1_n_0\
-    );
-\count[5]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFE00000001"
-    )
-        port map (
-      I0 => count(2),
-      I1 => count(3),
-      I2 => count(1),
-      I3 => count(0),
-      I4 => count(4),
-      I5 => count(5),
-      O => \count[5]_i_1_n_0\
+      O => \count[9]_i_2_n_0\
     );
 \count_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \count[0]_i_1_n_0\,
+      D => count_0(0),
       Q => count(0),
       R => EN_16x_Baud_reg_0
     );
@@ -137,7 +239,7 @@ EN_16x_Baud_reg: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \count[1]_i_1_n_0\,
+      D => count_0(1),
       Q => count(1),
       R => EN_16x_Baud_reg_0
     );
@@ -145,7 +247,7 @@ EN_16x_Baud_reg: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \count[2]_i_1_n_0\,
+      D => count_0(2),
       Q => count(2),
       R => EN_16x_Baud_reg_0
     );
@@ -153,7 +255,7 @@ EN_16x_Baud_reg: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \count[3]_i_1_n_0\,
+      D => count_0(3),
       Q => count(3),
       R => EN_16x_Baud_reg_0
     );
@@ -161,7 +263,7 @@ EN_16x_Baud_reg: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \count[4]_i_1_n_0\,
+      D => count_0(4),
       Q => count(4),
       R => EN_16x_Baud_reg_0
     );
@@ -169,8 +271,40 @@ EN_16x_Baud_reg: unisim.vcomponents.FDRE
      port map (
       C => s_axi_aclk,
       CE => '1',
-      D => \count[5]_i_1_n_0\,
+      D => count_0(5),
       Q => count(5),
+      R => EN_16x_Baud_reg_0
+    );
+\count_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => s_axi_aclk,
+      CE => '1',
+      D => count_0(6),
+      Q => count(6),
+      R => EN_16x_Baud_reg_0
+    );
+\count_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => s_axi_aclk,
+      CE => '1',
+      D => count_0(7),
+      Q => count(7),
+      R => EN_16x_Baud_reg_0
+    );
+\count_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => s_axi_aclk,
+      CE => '1',
+      D => count_0(8),
+      Q => count(8),
+      R => EN_16x_Baud_reg_0
+    );
+\count_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => s_axi_aclk,
+      CE => '1',
+      D => count_0(9),
+      Q => count(9),
       R => EN_16x_Baud_reg_0
     );
 end STRUCTURE;
@@ -198,6 +332,8 @@ entity base_mb_axi_uartlite_0_0_cdc_sync is
     rx : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_cdc_sync : entity is "cdc_sync";
 end base_mb_axi_uartlite_0_0_cdc_sync;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_cdc_sync is
@@ -221,8 +357,8 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_cdc_sync is
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "FDR";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "PRIMITIVE";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of fifo_Write_i_1 : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of frame_err_ocrd_i_1 : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of fifo_Write_i_1 : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of frame_err_ocrd_i_1 : label is "soft_lutpair15";
 begin
   scndry_out <= \^scndry_out\;
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\: unisim.vcomponents.FDRE
@@ -340,6 +476,8 @@ entity base_mb_axi_uartlite_0_0_cntr_incr_decr_addn_f is
     tx_Start : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_cntr_incr_decr_addn_f : entity is "cntr_incr_decr_addn_f";
 end base_mb_axi_uartlite_0_0_cntr_incr_decr_addn_f;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_cntr_incr_decr_addn_f is
@@ -351,10 +489,10 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_cntr_incr_decr_addn_f is
   signal \^ss\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal addr_i_p1 : STD_LOGIC_VECTOR ( 4 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[1]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[3]_i_2__0\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_3__0\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_4__0\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[1]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[3]_i_2__0\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_3__0\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_4__0\ : label is "soft_lutpair23";
 begin
   Q(4 downto 0) <= \^q\(4 downto 0);
   SS(0) <= \^ss\(0);
@@ -572,10 +710,10 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_cntr_incr_decr_addn_f_2 is
   signal \^ss\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal addr_i_p1 : STD_LOGIC_VECTOR ( 4 downto 0 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[0]_i_1__0\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_3\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_4\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_5__0\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[0]_i_1__0\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_3\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_4\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \INFERRED_GEN.cnt_i[4]_i_5__0\ : label is "soft_lutpair16";
 begin
   Q(4 downto 0) <= \^q\(4 downto 0);
   SS(0) <= \^ss\(0);
@@ -764,6 +902,8 @@ entity base_mb_axi_uartlite_0_0_dynshreg_f is
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_dynshreg_f : entity is "dynshreg_f";
 end base_mb_axi_uartlite_0_0_dynshreg_f;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_dynshreg_f is
@@ -1135,6 +1275,8 @@ entity base_mb_axi_uartlite_0_0_pselect_f is
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_pselect_f : entity is "pselect_f";
 end base_mb_axi_uartlite_0_0_pselect_f;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_pselect_f is
@@ -1227,6 +1369,8 @@ entity base_mb_axi_uartlite_0_0_address_decoder is
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_1\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_2\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_address_decoder : entity is "address_decoder";
 end base_mb_axi_uartlite_0_0_address_decoder;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_address_decoder is
@@ -1743,6 +1887,8 @@ entity base_mb_axi_uartlite_0_0_srl_fifo_rbu_f is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_srl_fifo_rbu_f : entity is "srl_fifo_rbu_f";
 end base_mb_axi_uartlite_0_0_srl_fifo_rbu_f;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_srl_fifo_rbu_f is
@@ -1946,6 +2092,8 @@ entity base_mb_axi_uartlite_0_0_slave_attachment is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_slave_attachment : entity is "slave_attachment";
 end base_mb_axi_uartlite_0_0_slave_attachment;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_slave_attachment is
@@ -2363,6 +2511,8 @@ entity base_mb_axi_uartlite_0_0_srl_fifo_f is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_srl_fifo_f : entity is "srl_fifo_f";
 end base_mb_axi_uartlite_0_0_srl_fifo_f;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_srl_fifo_f is
@@ -2494,6 +2644,8 @@ entity base_mb_axi_uartlite_0_0_axi_lite_ipif is
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end base_mb_axi_uartlite_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_axi_lite_ipif is
@@ -2570,6 +2722,8 @@ entity base_mb_axi_uartlite_0_0_uartlite_rx is
     tx_Buffer_Empty_Pre : in STD_LOGIC;
     rx : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_uartlite_rx : entity is "uartlite_rx";
 end base_mb_axi_uartlite_0_0_uartlite_rx;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_rx is
@@ -2623,18 +2777,18 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_rx is
   signal valid_rx : STD_LOGIC;
   signal valid_rx_i_1_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[3].fifo_din[3]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[4].fifo_din[4]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[6].fifo_din[6]_i_1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[7].fifo_din[7]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[3].fifo_din[3]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[4].fifo_din[4]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[6].fifo_din[6]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \SERIAL_TO_PARALLEL[7].fifo_din[7]_i_1\ : label is "soft_lutpair20";
   attribute srl_bus_name : string;
   attribute srl_bus_name of \data_shift_reg[13]_srl14___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12\ : label is "U0/\UARTLITE_CORE_I/UARTLITE_RX_I/data_shift_reg ";
   attribute srl_name : string;
   attribute srl_name of \data_shift_reg[13]_srl14___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12\ : label is "U0/\UARTLITE_CORE_I/UARTLITE_RX_I/data_shift_reg[13]_srl14___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12 ";
-  attribute SOFT_HLUTNM of \data_shift_reg[13]_srl14___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of running_i_1 : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \status_reg[1]_i_2\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of valid_rx_i_1 : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \data_shift_reg[13]_srl14___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of running_i_1 : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \status_reg[1]_i_2\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of valid_rx_i_1 : label is "soft_lutpair19";
 begin
   data_shift_reg_r_12_0 <= \^data_shift_reg_r_12_0\;
   s_axi_aresetn_0 <= \^s_axi_aresetn_0\;
@@ -3218,6 +3372,8 @@ entity base_mb_axi_uartlite_0_0_uartlite_tx is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_uartlite_tx : entity is "uartlite_tx";
 end base_mb_axi_uartlite_0_0_uartlite_tx;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_tx is
@@ -3225,7 +3381,6 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_tx is
   signal \data_shift_reg[13]_srl13___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_11_n_0\ : STD_LOGIC;
   signal \data_shift_reg[14]_UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12_n_0\ : STD_LOGIC;
   signal data_shift_reg_gate_n_0 : STD_LOGIC;
-  signal \data_shift_reg_n_0_[0]\ : STD_LOGIC;
   signal div16 : STD_LOGIC;
   signal fifo_Read : STD_LOGIC;
   signal fifo_Read0 : STD_LOGIC;
@@ -3235,6 +3390,7 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_tx is
   signal \mux_sel[2]_i_1_n_0\ : STD_LOGIC;
   signal \mux_sel_reg_n_0_[0]\ : STD_LOGIC;
   signal \mux_sel_reg_n_0_[2]\ : STD_LOGIC;
+  signal p_0_in : STD_LOGIC_VECTOR ( 1 to 1 );
   signal p_4_in : STD_LOGIC;
   signal serial_Data : STD_LOGIC;
   signal tx_DataBits : STD_LOGIC;
@@ -3248,8 +3404,8 @@ architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_tx is
   attribute srl_name : string;
   attribute srl_name of \data_shift_reg[13]_srl13___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_11\ : label is "U0/\UARTLITE_CORE_I/UARTLITE_TX_I/data_shift_reg[13]_srl13___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_11 ";
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \mux_sel[0]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \mux_sel[2]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \mux_sel[0]_i_1\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of \mux_sel[2]_i_1\ : label is "soft_lutpair24";
 begin
 SRL_FIFO_I: entity work.base_mb_axi_uartlite_0_0_srl_fifo_f
      port map (
@@ -3296,7 +3452,7 @@ TX_reg: unisim.vcomponents.FDSE
       C => s_axi_aclk,
       CE => p_2_out(0),
       D => div16,
-      Q => \data_shift_reg_n_0_[0]\,
+      Q => p_0_in(1),
       S => \data_shift_reg[15]_0\
     );
 \data_shift_reg[13]_srl13___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_11\: unisim.vcomponents.SRL16E
@@ -3307,7 +3463,7 @@ TX_reg: unisim.vcomponents.FDSE
       A3 => '1',
       CE => p_2_out(0),
       CLK => s_axi_aclk,
-      D => \data_shift_reg_n_0_[0]\,
+      D => p_0_in(1),
       Q => \data_shift_reg[13]_srl13___UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_11_n_0\
     );
 \data_shift_reg[14]_UARTLITE_CORE_I_UARTLITE_RX_I_data_shift_reg_r_12\: unisim.vcomponents.FDRE
@@ -3502,6 +3658,8 @@ entity base_mb_axi_uartlite_0_0_uartlite_core is
     fifo_wr : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_uartlite_core : entity is "uartlite_core";
 end base_mb_axi_uartlite_0_0_uartlite_core;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0_uartlite_core is
@@ -3682,7 +3840,7 @@ entity base_mb_axi_uartlite_0_0_axi_uartlite is
     tx : out STD_LOGIC
   );
   attribute C_BAUDRATE : integer;
-  attribute C_BAUDRATE of base_mb_axi_uartlite_0_0_axi_uartlite : entity is 115200;
+  attribute C_BAUDRATE of base_mb_axi_uartlite_0_0_axi_uartlite : entity is 9600;
   attribute C_DATA_BITS : integer;
   attribute C_DATA_BITS of base_mb_axi_uartlite_0_0_axi_uartlite : entity is 8;
   attribute C_FAMILY : string;
@@ -3697,6 +3855,8 @@ entity base_mb_axi_uartlite_0_0_axi_uartlite is
   attribute C_S_AXI_DATA_WIDTH of base_mb_axi_uartlite_0_0_axi_uartlite : entity is 32;
   attribute C_USE_PARITY : integer;
   attribute C_USE_PARITY of base_mb_axi_uartlite_0_0_axi_uartlite : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of base_mb_axi_uartlite_0_0_axi_uartlite : entity is "axi_uartlite";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of base_mb_axi_uartlite_0_0_axi_uartlite : entity is "yes";
 end base_mb_axi_uartlite_0_0_axi_uartlite;
@@ -3894,7 +4054,7 @@ end base_mb_axi_uartlite_0_0;
 
 architecture STRUCTURE of base_mb_axi_uartlite_0_0 is
   attribute C_BAUDRATE : integer;
-  attribute C_BAUDRATE of U0 : label is 115200;
+  attribute C_BAUDRATE of U0 : label is 9600;
   attribute C_DATA_BITS : integer;
   attribute C_DATA_BITS of U0 : label is 8;
   attribute C_FAMILY : string;
