@@ -7,9 +7,58 @@
 
 int main()
 {
+    // The desired time to read a file/string before timeout in microseconds
+    const int EOS_TIMEOUT_US = 100000;
+
     init_platform();
 
-    print("Starting test!\n\r");
+    print("Select a file 4kB or less to encrypt \n\r");
+
+    // UART TX -> RX Loop forever example
+    char uart_rx = 0;
+    char word_to_encrypt[4096] = {};
+    int char_ptr = 0;
+
+    // The timeout looks for a break in the transmission to find the end of file
+    int timeout = 0;
+
+    // Indicates the first character was received over uart
+    char rx_first_char = 0;
+
+    while(1)
+    {
+    	// Loop forever
+    	uart_rx = 0;
+    	while(uart_rx == 0){
+    		// Loop until the RX FIFO is not empty
+
+    		// Sleep for 1 us
+    		usleep(1);
+
+
+			// Check to see if the RX FIFO is empty
+			uart_rx = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + 0x08) & 0x01;
+
+			if (uart_rx == 1){
+				timeout = 0;
+				rx_first_char = 1;
+			}
+			else if ((timeout++ >= EOS_TIMEOUT_US) && (rx_first_char > 0))
+			{
+				break;
+			}
+
+
+    	};
+    	if (timeout >= EOS_TIMEOUT_US) break;
+
+    	// Read the RX register
+    	uart_rx = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + 0x00);
+    	word_to_encrypt[char_ptr++] = uart_rx;
+	};
+
+	// Print the string before encyrption
+    xil_printf("%s", word_to_encrypt);
 
     // Initialize the timer
     init_64b_timer(0,0);
@@ -48,6 +97,7 @@ int main()
 
 
     // UART TX -> RX Loop forever example
+    /*
     int uart_rx;
     while(1){
     	// Loop forever
@@ -68,6 +118,7 @@ int main()
     	// Print the character from the RX register
 		xil_printf("%c", uart_rx);
 	};
+	*/
 
     cleanup_platform();
     return 0;

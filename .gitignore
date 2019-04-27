@@ -89,6 +89,8 @@
 !*.elf
 !*.bmm
 !*.xmp
+#Linker script files
+!*.ld
 
 src/uBlaze_Applications/.Xil
 src/uBlaze_Applications/uBlaze_Applications.sdk/.metadata
