@@ -16,4 +16,10 @@ void init_64b_timer(u32 t0_value, u32 t1_value);
 // Gets the 64 bit time, where each timer represents 32 bits
 u64 get_64b_time();
 
+// Encrypts a character array
+char* encrypt(char* encr_str, u32 len);
+
+// Decrypts a character array
+char* decrypt(char* encr_str, u32 len);
+
 #endif /* UBLAZE_APP_H_ */

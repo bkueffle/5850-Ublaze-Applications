@@ -815,7 +815,7 @@ BEGIN
       C_DADDR_SIZE => 32,
       C_INSTANCE => "base_mb_microblaze_0_0",
       C_AVOID_PRIMITIVES => 0,
-      C_AREA_OPTIMIZED => 0,
+      C_AREA_OPTIMIZED => 1,
       C_OPTIMIZATION => 0,
       C_INTERCONNECT => 2,
       C_BASE_VECTORS => X"0000000000000000",

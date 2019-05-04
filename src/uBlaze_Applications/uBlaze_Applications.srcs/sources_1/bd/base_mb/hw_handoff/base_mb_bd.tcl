@@ -110,16 +110,6 @@ if { ${design_name} eq "" } {
 
 }
 
-  # Add USER_COMMENTS on $design_name
-  set_property USER_COMMENTS.comment_0 "Simple MicroBlaze Design
-For instructions see the Vivado documentation, in particular
-Vivado Design Suite User Guide:  Embedded Processor Hardware Design (UG898)
-
-To Export this Design to SDK:
-1. Click on the Generate Bitstream in Flow Navigator
-2. Select File => Export => Export Hardware" [get_bd_designs $design_name]
-  set_property USER_COMMENTS.comment_1 "Example MicroBlaze Design in IP Integrator" [get_bd_designs $design_name]
-
 common::send_msg_id "BD_TCL-005" "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
 
 if { $nRet != 0 } {
@@ -292,7 +282,7 @@ proc create_root_design { parentCell } {
   # Create instance: axi_uartlite_0, and set properties
   set axi_uartlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0 ]
   set_property -dict [ list \
-   CONFIG.C_BAUDRATE {9600} \
+   CONFIG.C_BAUDRATE {115200} \
    CONFIG.UARTLITE_BOARD_INTERFACE {usb_uart} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_uartlite_0
@@ -326,16 +316,29 @@ proc create_root_design { parentCell } {
   set microblaze_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0 ]
   set_property -dict [ list \
    CONFIG.C_ADDR_TAG_BITS {0} \
+   CONFIG.C_AREA_OPTIMIZED {1} \
+   CONFIG.C_CACHE_BYTE_SIZE {8192} \
    CONFIG.C_DCACHE_ADDR_TAG {0} \
+   CONFIG.C_DCACHE_BYTE_SIZE {8192} \
    CONFIG.C_DEBUG_ENABLED {1} \
    CONFIG.C_D_AXI {1} \
    CONFIG.C_D_LMB {1} \
    CONFIG.C_I_LMB {1} \
+   CONFIG.C_MMU_DTLB_SIZE {4} \
+   CONFIG.C_MMU_ITLB_SIZE {2} \
+   CONFIG.C_MMU_ZONES {16} \
+   CONFIG.C_NUMBER_OF_PC_BRK {1} \
+   CONFIG.C_USE_BARREL {0} \
    CONFIG.C_USE_BRANCH_TARGET_CACHE {0} \
    CONFIG.C_USE_DCACHE {0} \
    CONFIG.C_USE_DIV {0} \
+   CONFIG.C_USE_FPU {0} \
    CONFIG.C_USE_HW_MUL {0} \
    CONFIG.C_USE_ICACHE {0} \
+   CONFIG.C_USE_MSR_INSTR {0} \
+   CONFIG.C_USE_PCMP_INSTR {0} \
+   CONFIG.C_USE_REORDER_INSTR {1} \
+   CONFIG.G_TEMPLATE_LIST {0} \
  ] $microblaze_0
 
   # Create instance: microblaze_0_axi_periph, and set properties
@@ -390,8 +393,8 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
   create_bd_addr_seg -range 0x00001000 -offset 0x41C00000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] SEG_axi_timer_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x40600000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] SEG_axi_uartlite_0_Reg
-  create_bd_addr_seg -range 0x00008000 -offset 0x00000000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] SEG_dlmb_bram_if_cntlr_Mem
-  create_bd_addr_seg -range 0x00008000 -offset 0x00000000 [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] SEG_ilmb_bram_if_cntlr_Mem
+  create_bd_addr_seg -range 0x00040000 -offset 0x00000000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] SEG_dlmb_bram_if_cntlr_Mem
+  create_bd_addr_seg -range 0x00040000 -offset 0x00000000 [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] SEG_ilmb_bram_if_cntlr_Mem
 
 
   # Restore current instance
