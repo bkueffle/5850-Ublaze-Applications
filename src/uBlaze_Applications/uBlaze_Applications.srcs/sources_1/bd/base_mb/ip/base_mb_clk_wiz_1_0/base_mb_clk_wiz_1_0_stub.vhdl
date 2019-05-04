@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Fri Apr  5 22:01:44 2019
+-- Date        : Fri May  3 21:14:56 2019
 -- Host        : Drew running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_clk_wiz_1_0/base_mb_clk_wiz_1_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top base_mb_clk_wiz_1_0 -prefix
+--               base_mb_clk_wiz_1_0_ base_mb_clk_wiz_1_0_stub.vhdl
 -- Design      : base_mb_clk_wiz_1_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1

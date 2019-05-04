@@ -73,50 +73,28 @@ char* encrypt(char* encr_str, u32 len)
   char mod,modmult, newch;
   int num[100];
 
-  for(u8 i=0;i<9;i++)
-  {                                                         //Multiple For Loops For Storing The Numbers
-    num[i]=i;                                                //In An Array
-  }
-  
-  for(u8 i=9;i<26;i++)                                         //Loops Will Store 100 Numbers
-  {
-    num[i]=i+5;                                              //Which Will Encrypt The Contents Of A File
-  }
-  
-  for(u8 i=26;i<=61;i++)                                        //To Avoid The Error Ocuur Caused By The
-  {                                                         //Enter Key ,Tab Key & Space Key
-    num[i]=i+7;                                              //These Variations In Loops Is Made
-  }
-  
-  for(u8 i=62;i<=87;i++)
-  {
-    num[i]=i+35;
-  }
-  
-//  for(u8 i=0;i<9;i++) num[i]=i;
-//
-//  for(u8 i=14;i<31;i++) num[i-5]=i;
-//
-//  for(u8 i=33;i<=68;i++) num[i-7]=i;
-//
-//  for(u8 i=97;i<=122;i++) num[i-7]=i;
-//
+  // Setup encryption key
+  for(u8 i=0;i<9;i++) num[i]=i;
+  for(u8 i=9;i<26;i++) num[i]=i+5;
+  for(u8 i=26;i<=61;i++) num[i]=i+7;
+  for(u8 i=62;i<=87;i++) num[i]=i+35;
+
   for(int i=0; i < len; i++)
   {
 
     ////////////////////// START ENCRYPTING CHARACTERS //////////////////////
   
     //For Tab Key
-    if(encr_str[i] == 9) newch = encr_str[i];
+    if (encr_str[i] == 9) newch = encr_str[i];
   
     //For Carriage REturn
-    if(encr_str[i] == 10 || encr_str[i] == 13) newch = encr_str[i];
+    else if (encr_str[i] == 10 || encr_str[i] == 13) newch = encr_str[i];
   
     // Spaces
-    if(encr_str[i] == 32) newch = encr_str[i];
+    else if (encr_str[i] == 32) newch = encr_str[i];
   
     //For Special Symbols
-    if(encr_str[i] >= 33 && encr_str[i] <= 47)
+    else if (encr_str[i] >= 33 && encr_str[i] <= 47)
     {                                                    
       mod=encr_str[i] + 64;
       modmult = mod * 20;
@@ -124,7 +102,7 @@ char* encrypt(char* encr_str, u32 len)
     }
 
     // Encrypt The Numbers
-    if(encr_str[i] >= 48 && encr_str[i] <= 57)
+    else if (encr_str[i] >= 48 && encr_str[i] <= 57)
     {
       mod=num[encr_str[i] + 4];
       modmult = mod * 20;
@@ -132,7 +110,7 @@ char* encrypt(char* encr_str, u32 len)
     }
     
     //For Special Symbols
-    if(encr_str[i] >= 58 && encr_str[i] <= 64)
+    else if (encr_str[i] >= 58 && encr_str[i] <= 64)
     {
       mod=encr_str[i] + 54;
       modmult = mod * 20;
@@ -140,7 +118,7 @@ char* encrypt(char* encr_str, u32 len)
     }
 
     //Encrypt The Capital Letters
-    if(encr_str[i] >= 65 && encr_str[i] <= 90)
+    else if (encr_str[i] >= 65 && encr_str[i] <= 90)
     {
       mod=num[encr_str[i] - 39];
       modmult = mod * 20;
@@ -148,15 +126,15 @@ char* encrypt(char* encr_str, u32 len)
     }
   
     //For Special Symbols
-    if(encr_str[i] >= 91 && encr_str[i] <= 96)
+    else if (encr_str[i] >= 91 && encr_str[i] <= 96)
     {
       mod=encr_str[i] + 28;
       modmult = mod * 20;
       newch = modmult > 500 ? modmult : mod;
     }
   
-    //Encrypt The  Small Letters
-    if(encr_str[i] >= 97 && encr_str[i] <= 122)
+    //Encrypt the lower case letters
+    else if (encr_str[i] >= 97 && encr_str[i] <= 122)
     {
       mod=num[encr_str[i] - 97];
       modmult = mod * 20;
@@ -164,7 +142,7 @@ char* encrypt(char* encr_str, u32 len)
     }
   
     //For Special Symbols
-    if(encr_str[i] >= 123 && encr_str[i] <= 126)
+    else if (encr_str[i] >= 123 && encr_str[i] <= 126)
     {
       mod=encr_str[i] - 40;                                          
       modmult = mod * 20;
@@ -187,8 +165,6 @@ char* decrypt(char* encr_str, u32 len)
   for(u8 i=14;i<31;i++) num[i-5]=i;
 
   for(u8 i=33;i<=68;i++) num[i-7]=i;
-
-  //for(u8 i=97;i<=122;i++) num[i-7]=i;
   
   for(int i=0; i < len; i++)
   {
