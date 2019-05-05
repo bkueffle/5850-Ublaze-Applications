@@ -10,6 +10,7 @@
 #include "ublaze_app_functions.h"
 #include "xtmrctr.h"
 #include "xil_printf.h"
+#include "math.h"
 
 void init_64b_timer(u32 t0_value, u32 t1_value)
 {
@@ -68,176 +69,59 @@ u64 get_64b_time()
   return (curr_msb << 32) | lsb;
 }
 
-char* encrypt(char* encr_str, u32 len)
+// Returns true if the number is prime
+int is_prime(int num)
 {
-  char mod,modmult, newch;
-  int num[100];
+  for(u32 i = 2; i <= sqrt(num); i++)
+  {
+    if(num % i == 0) return 0;
+  }
+  return 1;
+}
 
-  // Setup encryption key
-  for(u8 i=0;i<9;i++) num[i]=i;
-  for(u8 i=9;i<26;i++) num[i]=i+5;
-  for(u8 i=26;i<=61;i++) num[i]=i+7;
-  for(u8 i=62;i<=87;i++) num[i]=i+35;
+// Calculates result of key and totient
+int cd(int key, u32 totient)
+{
+  int i = 1;
+  while(1)
+  {
+    i += totient;
+    if(i % key == 0) return(i / key);
+  }
+}
 
+// Encrypts the input message
+char* encrypt(char* encr_str, u32 len, u32 key, u32 n)
+{
+  int k;
   for(int i=0; i < len; i++)
   {
-
-    ////////////////////// START ENCRYPTING CHARACTERS //////////////////////
-  
-    //For Tab Key
-    if (encr_str[i] == 9) newch = encr_str[i];
-  
-    //For Carriage REturn
-    else if (encr_str[i] == 10 || encr_str[i] == 13) newch = encr_str[i];
-  
-    // Spaces
-    else if (encr_str[i] == 32) newch = encr_str[i];
-  
-    //For Special Symbols
-    else if (encr_str[i] >= 33 && encr_str[i] <= 47)
-    {                                                    
-      mod=encr_str[i] + 64;
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
-    }
-
-    // Encrypt The Numbers
-    else if (encr_str[i] >= 48 && encr_str[i] <= 57)
+    k = 1;
+    for(int j=0; j < key; j++)
     {
-      mod=num[encr_str[i] + 4];
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
+      k *= encr_str[i];
+      k %= n;
     }
-    
-    //For Special Symbols
-    else if (encr_str[i] >= 58 && encr_str[i] <= 64)
-    {
-      mod=encr_str[i] + 54;
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
-    }
-
-    //Encrypt The Capital Letters
-    else if (encr_str[i] >= 65 && encr_str[i] <= 90)
-    {
-      mod=num[encr_str[i] - 39];
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
-    }
-  
-    //For Special Symbols
-    else if (encr_str[i] >= 91 && encr_str[i] <= 96)
-    {
-      mod=encr_str[i] + 28;
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
-    }
-  
-    //Encrypt the lower case letters
-    else if (encr_str[i] >= 97 && encr_str[i] <= 122)
-    {
-      mod=num[encr_str[i] - 97];
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
-    }
-  
-    //For Special Symbols
-    else if (encr_str[i] >= 123 && encr_str[i] <= 126)
-    {
-      mod=encr_str[i] - 40;                                          
-      modmult = mod * 20;
-      newch = modmult > 500 ? modmult : mod;
-    }
-
-    encr_str[i] = newch;
+    encr_str[i] = k;
   }
   return encr_str;
 }
 
-// Decrypts a character array
-char* decrypt(char* encr_str, u32 len)
+// Decrypts the encoded string
+char* decrypt(char* encr_str, u32 len, u32 key, u32 n)
 {
-  char mod, newch;
-  int num[100], flag;
-
-  for(u8 i=0;i<9;i++) num[i]=i;
-
-  for(u8 i=14;i<31;i++) num[i-5]=i;
-
-  for(u8 i=33;i<=68;i++) num[i-7]=i;
-  
+  int k;
+  unsigned char ch;
   for(int i=0; i < len; i++)
   {
-    flag = 0;
-    ////////////////////// START DECRYPTING CHARACTERS //////////////////////
-  
-    for(u8 j=0; j<26; j++)
+    k = 1;
+    ch = encr_str[i];
+    for(int j=0; j < key; j++)
     {
-      // Find lower case
-      if(encr_str[i] == num[j])
-      {
-        mod = j + 97;
-        encr_str[i] = mod;
-        flag = 1;
-        break;
-      }
+      k *= ch;
+      k %= n;
     }
-  
-    if (flag == 1) continue;
-  
-    for(u8 j=26; j<52; j++)
-    {
-      // Find capitals
-        if(encr_str[i]==num[j])
-        {
-          mod=j + 39;
-          encr_str[i] = mod;
-          flag = 1;
-          break;
-        }
-    }
-  
-    if (flag==1) continue;
-  
-    for(u8 j=52; j<62; j++)
-    {
-      // Find numbers
-      if(encr_str[i]==num[j])
-      {
-        mod = j - 4;
-        encr_str[i] = mod;
-        flag = 1;
-        break;
-      }
-    }
-
-    if (flag==1) continue;
-  
-    // Find enter
-    if (encr_str[i] == 10 || encr_str[i] == 13) newch = encr_str[i];
-  
-    // Spaces
-    if (encr_str[i] == 32) newch = encr_str[i];
-  
-    // Tab
-    if(encr_str[i] == 9) newch = encr_str[i];
-  
-    // Special symbols
-    if(encr_str[i] >= 97 && encr_str[i] <= 111) newch = encr_str[i] - 64;
-  
-    // Special symbols
-    if(encr_str[i] >= 112 && encr_str[i] <= 118) newch = encr_str[i] - 54;
-  
-    // Special symbols
-    if(encr_str[i] >= 119 && encr_str[i] <= 124) newch = encr_str[i] - 28;
-    
-    // Special symbols
-    if(encr_str[i] >= 83 && encr_str[i] <= 86) newch = encr_str[i] + 40;
-
-    encr_str[i] = newch;
+    encr_str[i] = k;
   }
   return encr_str;
 }
-
-
-

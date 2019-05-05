@@ -11,6 +11,8 @@
 #include "sleep.h"
 #include "ublaze_app_functions.h"
 
+u32 keys[2] = {0,0};
+
 int main()
 {
     // The desired time to read a file/string before timeout in microseconds
@@ -18,6 +20,15 @@ int main()
 
     // Enable printing the result
     const u8 RESULT_EN = 1;
+
+    // Enable showing the encrypted value
+    const u8 SHOW_ENCRYPT = 0;
+
+    // Initialize the primes, calculate multiply and totient
+    const u32 p1 = 7;
+    const u32 p2 = 17;
+    const u32 n = p1 * p2;
+    const u32 totient = (p1 - 1) * (p2 - 1);
 
     init_platform();
 
@@ -34,6 +45,7 @@ int main()
     // Indicates the first character was received over uart
     char rx_first_char = 0;
 
+    // Wait for a message to arrive over UART to encode
     while(1)
     {
     	// Loop forever
@@ -74,10 +86,17 @@ int main()
     ///////////////////////////////////////////////////////////////////////
     // Process encrypting and decrypting
 
-    char *processed_word = encrypt(word_to_encrypt, char_ptr * sizeof(char));
-    //xil_printf("Result is : %s\n\r", encrypted_word);
+    // Determine keys for encrypt/decrypt
+    encryption_key(totient, p1, p2);
 
-    processed_word = decrypt(processed_word, char_ptr * sizeof(char));
+    // Encrypt the message
+    char *processed_word = encrypt(word_to_encrypt, char_ptr * sizeof(char), keys[0], n);
+
+    // Option to show the encrypted message
+    if (SHOW_ENCRYPT == 1) xil_printf("Result is : %s\n\r", processed_word);
+
+    //Decrypt the message
+    processed_word = decrypt(processed_word, char_ptr * sizeof(char), keys[1], n);
 
     ///////////////////////////////////////////////////////////////////////
 
@@ -113,4 +132,25 @@ int main()
 
     cleanup_platform();
     return 0;
+}
+
+// Determine the keys utilized by the encrypt and decrypt functions
+void encryption_key(u32 totient, u32 p1, u32 p2)
+{
+  for(int i = 2; i < totient; i++)
+  {
+    if(totient % i == 0) continue;
+    // Determine if this number is prime and is not the known primes
+    if(is_prime(i) == 1 && i != p1 && i != p2)
+    {
+      // Determine encrypt key
+      keys[0] = i;
+      if(cd(keys[0], totient) > 0)
+      {
+        // Determine part of the decrypt key (private)
+    	keys[1] = cd(keys[0], totient);
+        break;
+      }
+    }
+  }
 }

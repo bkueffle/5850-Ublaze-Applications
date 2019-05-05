@@ -17,9 +17,20 @@ void init_64b_timer(u32 t0_value, u32 t1_value);
 u64 get_64b_time();
 
 // Encrypts a character array
-char* encrypt(char* encr_str, u32 len);
+
+// Calculates the keys used for encryption
+void encryption_key(u32 totient, u32 p1, u32 p2);
+
+// Returns 1 if the number is prime
+int is_prime(int num);
+
+// Calculates using the keys and totient
+int cd(int a, u32 totient);
+
+// Encrypts a message
+char* encrypt(char* encr_str, u32 len, u32 key, u32 n);
 
 // Decrypts a character array
-char* decrypt(char* encr_str, u32 len);
+char* decrypt(char* encr_str, u32 len, u32 key, u32 n);
 
 #endif /* UBLAZE_APP_H_ */
