@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Sat May  4 16:27:08 2019
+--Date        : Sat May  4 19:09:08 2019
 --Host        : Drew running 64-bit major release  (build 9200)
 --Command     : generate_target base_mb.bd
 --Design      : base_mb
@@ -2302,7 +2302,7 @@ entity base_mb is
     uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of base_mb : entity is "base_mb,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base_mb,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""da_axi4_cnt""""""""=2,""""""""da_mb_cnt""""""""=1,""""""da_axi4_cnt""""""=2,""""da_axi4_cnt""""=1,""da_axi4_cnt""=2,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of base_mb : entity is "base_mb,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base_mb,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""da_axi4_cnt""""""""""=2,""""""""""da_mb_cnt""""""""""=1,""""""""da_axi4_cnt""""""""=2,""""""da_axi4_cnt""""""=1,""""da_axi4_cnt""""=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of base_mb : entity is "base_mb.hwdef";
 end base_mb;

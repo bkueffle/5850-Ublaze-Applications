@@ -18,14 +18,14 @@ int main()
     // The desired time to read a file/string before timeout in microseconds
     const int EOS_TIMEOUT_US = 100000;
 
-    // Enable printing the result
-    const u8 RESULT_EN = 1;
+    // Enable printing the decrypted result
+    const u8 SHOW_RESULT = 1;
 
     // Enable showing the encrypted value
-    const u8 SHOW_ENCRYPT = 0;
+    const u8 SHOW_ENCRYPT = 1;
 
     // Initialize the primes, calculate multiply and totient
-    const u32 p1 = 7;
+    const u32 p1 = 13;
     const u32 p2 = 17;
     const u32 n = p1 * p2;
     const u32 totient = (p1 - 1) * (p2 - 1);
@@ -93,7 +93,7 @@ int main()
     char *processed_word = encrypt(word_to_encrypt, char_ptr * sizeof(char), keys[0], n);
 
     // Option to show the encrypted message
-    if (SHOW_ENCRYPT == 1) xil_printf("Result is : %s\n\r", processed_word);
+    if (SHOW_ENCRYPT == 1) xil_printf("Encrypted Message is : %s\n\r", processed_word);
 
     //Decrypt the message
     processed_word = decrypt(processed_word, char_ptr * sizeof(char), keys[1], n);
@@ -104,7 +104,7 @@ int main()
     u64 total_cycles = get_64b_time();
 
     // If the user enabled looking at the decryption result, print that result
-    if (RESULT_EN == 1) xil_printf("Result is : %s\n\r", processed_word);
+    if (SHOW_RESULT == 1) xil_printf("Decrypted Message is : %s\n\r", processed_word);
 
     // Report the time the algorithm took
     xil_printf("Total cycles: %d\n\r", total_cycles);

@@ -35,7 +35,7 @@
           <spirit:name>FREQ_HZ</spirit:name>
           <spirit:displayName>Clk frequency</spirit:displayName>
           <spirit:description>Clk frequency</spirit:description>
-          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.CLK.FREQ_HZ">125000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="BUSIFPARAM_VALUE.CLK.CLK.FREQ_HZ">100000000</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PHASE</spirit:name>
@@ -999,7 +999,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>FREQ_HZ</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_DP.FREQ_HZ">125000000</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_DP.FREQ_HZ">100000000</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -13935,7 +13935,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:00ee3d84</spirit:value>
+            <spirit:value>9:153774e0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13949,11 +13949,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat May 04 23:27:09 UTC 2019</spirit:value>
+            <spirit:value>Sun May 05 02:09:09 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:00ee3d84</spirit:value>
+            <spirit:value>9:153774e0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13969,11 +13969,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat May 04 23:27:09 UTC 2019</spirit:value>
+            <spirit:value>Sun May 05 02:09:09 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:00ee3d84</spirit:value>
+            <spirit:value>9:153774e0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -13993,7 +13993,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:09afc29d</spirit:value>
+            <spirit:value>9:dfdd3f36</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14009,11 +14009,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat May 04 23:27:09 UTC 2019</spirit:value>
+            <spirit:value>Sun May 05 02:09:10 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:09afc29d</spirit:value>
+            <spirit:value>9:dfdd3f36</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -14027,11 +14027,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat May 04 23:28:56 UTC 2019</spirit:value>
+            <spirit:value>Sun May 05 02:10:55 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:00ee3d84</spirit:value>
+            <spirit:value>9:153774e0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -24129,7 +24129,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_FREQ</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_FREQ">125000000</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_FREQ">100000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_USE_CONFIG_RESET</spirit:name>
@@ -25553,7 +25553,7 @@ It is highly recommended to create MicroBlaze systems within Vivado IP Integrato
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_FREQ</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_FREQ" spirit:order="1130" spirit:configGroups="1 NoDisplay">125000000</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_FREQ" spirit:order="1130" spirit:configGroups="1 NoDisplay">100000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

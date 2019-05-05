@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Sat May  4 16:28:55 2019
+-- Date        : Sat May  4 19:10:54 2019
 -- Host        : Drew running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.srcs/sources_1/bd/base_mb/ip/base_mb_microblaze_0_0/base_mb_microblaze_0_0_sim_netlist.vhdl
@@ -77753,7 +77753,7 @@ entity base_mb_microblaze_0_0_MicroBlaze is
   attribute C_FPU_EXCEPTION : integer;
   attribute C_FPU_EXCEPTION of base_mb_microblaze_0_0_MicroBlaze : entity is 0;
   attribute C_FREQ : integer;
-  attribute C_FREQ of base_mb_microblaze_0_0_MicroBlaze : entity is 125000000;
+  attribute C_FREQ of base_mb_microblaze_0_0_MicroBlaze : entity is 100000000;
   attribute C_FSL_EXCEPTION : integer;
   attribute C_FSL_EXCEPTION of base_mb_microblaze_0_0_MicroBlaze : entity is 0;
   attribute C_FSL_LINKS : integer;
@@ -91252,7 +91252,7 @@ architecture STRUCTURE of base_mb_microblaze_0_0 is
   attribute C_FPU_EXCEPTION : integer;
   attribute C_FPU_EXCEPTION of U0 : label is 0;
   attribute C_FREQ : integer;
-  attribute C_FREQ of U0 : label is 125000000;
+  attribute C_FREQ of U0 : label is 100000000;
   attribute C_FSL_EXCEPTION : integer;
   attribute C_FSL_EXCEPTION of U0 : label is 0;
   attribute C_FSL_LINKS : integer;
@@ -91503,7 +91503,7 @@ architecture STRUCTURE of base_mb_microblaze_0_0 is
   attribute x_interface_info : string;
   attribute x_interface_info of Clk : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of Clk : signal is "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF M0_AXIS:S0_AXIS:M1_AXIS:S1_AXIS:M2_AXIS:S2_AXIS:M3_AXIS:S3_AXIS:M4_AXIS:S4_AXIS:M5_AXIS:S5_AXIS:M6_AXIS:S6_AXIS:M7_AXIS:S7_AXIS:M8_AXIS:S8_AXIS:M9_AXIS:S9_AXIS:M10_AXIS:S10_AXIS:M11_AXIS:S11_AXIS:M12_AXIS:S12_AXIS:M13_AXIS:S13_AXIS:M14_AXIS:S14_AXIS:M15_AXIS:S15_AXIS:DLMB:ILMB:M_AXI_DP:M_AXI_IP:M_AXI_DC:M_AXI_IC:M_ACE_DC:M_ACE_IC:MON_DLMB:MON_ILMB:MON_AXI_DP:MON_AXI_IP:MON_AXI_DC:MON_AXI_IC:MON_ACE_DC:MON_ACE_IC, ASSOCIATED_RESET Reset, FREQ_HZ 125000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
+  attribute x_interface_parameter of Clk : signal is "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF M0_AXIS:S0_AXIS:M1_AXIS:S1_AXIS:M2_AXIS:S2_AXIS:M3_AXIS:S3_AXIS:M4_AXIS:S4_AXIS:M5_AXIS:S5_AXIS:M6_AXIS:S6_AXIS:M7_AXIS:S7_AXIS:M8_AXIS:S8_AXIS:M9_AXIS:S9_AXIS:M10_AXIS:S10_AXIS:M11_AXIS:S11_AXIS:M12_AXIS:S12_AXIS:M13_AXIS:S13_AXIS:M14_AXIS:S14_AXIS:M15_AXIS:S15_AXIS:DLMB:ILMB:M_AXI_DP:M_AXI_IP:M_AXI_DC:M_AXI_IC:M_ACE_DC:M_ACE_IC:MON_DLMB:MON_ILMB:MON_AXI_DP:MON_AXI_IP:MON_AXI_DC:MON_AXI_IC:MON_ACE_DC:MON_ACE_IC, ASSOCIATED_RESET Reset, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
   attribute x_interface_info of DCE : signal is "xilinx.com:interface:lmb:1.0 DLMB CE";
   attribute x_interface_info of DReady : signal is "xilinx.com:interface:lmb:1.0 DLMB READY";
   attribute x_interface_info of DUE : signal is "xilinx.com:interface:lmb:1.0 DLMB UE";
@@ -91553,7 +91553,7 @@ architecture STRUCTURE of base_mb_microblaze_0_0 is
   attribute x_interface_info of M_AXI_DP_ARADDR : signal is "xilinx.com:interface:aximm:1.0 M_AXI_DP ARADDR";
   attribute x_interface_info of M_AXI_DP_ARPROT : signal is "xilinx.com:interface:aximm:1.0 M_AXI_DP ARPROT";
   attribute x_interface_info of M_AXI_DP_AWADDR : signal is "xilinx.com:interface:aximm:1.0 M_AXI_DP AWADDR";
-  attribute x_interface_parameter of M_AXI_DP_AWADDR : signal is "XIL_INTERFACENAME M_AXI_DP, ID_WIDTH 0, READ_WRITE_MODE READ_WRITE, SUPPORTS_NARROW_BURST 0, HAS_BURST 0, HAS_LOCK 0, DATA_WIDTH 32, ADDR_WIDTH 32, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, MAX_BURST_LENGTH 1, PROTOCOL AXI4LITE, FREQ_HZ 125000000, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute x_interface_parameter of M_AXI_DP_AWADDR : signal is "XIL_INTERFACENAME M_AXI_DP, ID_WIDTH 0, READ_WRITE_MODE READ_WRITE, SUPPORTS_NARROW_BURST 0, HAS_BURST 0, HAS_LOCK 0, DATA_WIDTH 32, ADDR_WIDTH 32, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, MAX_BURST_LENGTH 1, PROTOCOL AXI4LITE, FREQ_HZ 100000000, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute x_interface_info of M_AXI_DP_AWPROT : signal is "xilinx.com:interface:aximm:1.0 M_AXI_DP AWPROT";
   attribute x_interface_info of M_AXI_DP_BRESP : signal is "xilinx.com:interface:aximm:1.0 M_AXI_DP BRESP";
   attribute x_interface_info of M_AXI_DP_RDATA : signal is "xilinx.com:interface:aximm:1.0 M_AXI_DP RDATA";

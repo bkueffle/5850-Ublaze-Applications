@@ -21,7 +21,10 @@ src
           |
           --> ublaze_app_functions.c
           --> ublaze_app_functions.h
-          --> ublaze_application.h
+          --> ublaze_app.c
+	  --> platform.c
+          --> platform.h
+          --> ublaze_application.ld
 
 Constraints (Digilent Xilinx AT-50 development board)
 
@@ -40,6 +43,8 @@ test
   --> impl2
   --> impl3
   --> impl4
+  --> impl5
+  --> impl6
 
 Test Scripts
 
