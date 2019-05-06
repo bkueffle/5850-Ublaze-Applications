@@ -1,4 +1,7 @@
+A Study on Soft Core Processor Configurations for Embedded Applications
 
+Git : https://github.com/bkueffle/5850-Ublaze-Applications
+
 Documentation and presentations
 
 doc
@@ -6,6 +9,12 @@ doc
   --> paper.pdf
   --> poster.ppt
   --> presentation.ppt
+
+Vivado Project & Block Diagram
+
+src
+  |
+  --> uBlaze_Applications
 
 Software Source Code & Linker Script
 

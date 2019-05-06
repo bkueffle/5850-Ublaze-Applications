@@ -24,8 +24,8 @@ void encryption_key(u32 totient, u32 p1, u32 p2);
 // Returns 1 if the number is prime
 int is_prime(int num);
 
-// Calculates using the keys and totient
-int cd(int a, u32 totient);
+// Calculates the decryption key
+int dkey(int a, u32 totient);
 
 // Encrypts a message
 char* encrypt(char* encr_str, u32 len, u32 key, u32 n);

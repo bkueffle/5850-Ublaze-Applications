@@ -79,8 +79,8 @@ int is_prime(int num)
   return 1;
 }
 
-// Calculates result of key and totient
-int cd(int key, u32 totient)
+// Calculates result of key and totient to find the decrypt key
+int dkey(int key, u32 totient)
 {
   int i = 1;
   while(1)
@@ -99,6 +99,7 @@ char* encrypt(char* encr_str, u32 len, u32 key, u32 n)
     k = 1;
     for(int j=0; j < key; j++)
     {
+      // Modular Exponentiation
       k *= encr_str[i];
       k %= n;
     }
@@ -118,6 +119,7 @@ char* decrypt(char* encr_str, u32 len, u32 key, u32 n)
     ch = encr_str[i];
     for(int j=0; j < key; j++)
     {
+      // Modular Exponentiation
       k *= ch;
       k %= n;
     }

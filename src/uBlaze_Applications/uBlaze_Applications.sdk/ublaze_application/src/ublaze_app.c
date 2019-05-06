@@ -145,10 +145,10 @@ void encryption_key(u32 totient, u32 p1, u32 p2)
     {
       // Determine encrypt key
       keys[0] = i;
-      if(cd(keys[0], totient) > 0)
+      if(dkey(keys[0], totient) > 0)
       {
         // Determine part of the decrypt key (private)
-    	keys[1] = cd(keys[0], totient);
+    	keys[1] = dkey(keys[0], totient);
         break;
       }
     }
