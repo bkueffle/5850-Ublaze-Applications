@@ -1,13 +1,13 @@
 A Study on Soft Core Processor Configurations for Embedded Applications
 
-Git : https://github.com/bkueffle/5850-Ublaze-Applications
+Git : https://github.com/bkueffle/UBLI-RSA_on_UBlaze
 
 Documentation and presentations
 
 doc
   |
   --> paper.pdf
-  --> poster.ppt
+  --> poster.pdf
   --> presentation.ppt
 
 Vivado Project & Block Diagram
@@ -68,6 +68,3 @@ Data Recording
 test
   |
   --> Results.xlsx
-
-
-

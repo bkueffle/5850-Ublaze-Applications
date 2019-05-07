@@ -69,8 +69,38 @@ u64 get_64b_time()
   return (curr_msb << 32) | lsb;
 }
 
+// Clears the UART transmit buffer
+void uart_tx_clr()
+{
+  const u8 CTRLR = 0x0C;
+
+  // Read control register
+  u64 reg = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + CTRLR);
+
+  // Read modify write, only modify bit 0
+  reg = (reg & 0xfffffffe) + (1 << 0);
+
+  // Write control register bit 0 - CLR TX
+  Xil_Out32(XPAR_AXI_UARTLITE_0_BASEADDR + CTRLR, reg);
+}
+
+// Clears the UART receive buffer
+void uart_rx_clr()
+{
+  const u8 CTRLR = 0x0C;
+
+  // Read control register
+  u64 reg = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + CTRLR);
+
+  // Read modify write, only modify bit 1
+  reg = (reg & 0xfffffffd) + (1 << 1);
+
+  // Write control register bit 1 - CLR RX
+  Xil_Out32(XPAR_AXI_UARTLITE_0_BASEADDR + CTRLR, reg);
+}
+
 // Returns true if the number is prime
-int is_prime(int num)
+u32 is_prime(u32 num)
 {
   for(u32 i = 2; i <= sqrt(num); i++)
   {
@@ -80,9 +110,9 @@ int is_prime(int num)
 }
 
 // Calculates result of key and totient to find the decrypt key
-int dkey(int key, u32 totient)
+u32 dkey(u32 key, u32 totient)
 {
-  int i = 1;
+  u32 i = 1;
   while(1)
   {
     i += totient;
@@ -94,10 +124,10 @@ int dkey(int key, u32 totient)
 char* encrypt(char* encr_str, u32 len, u32 key, u32 n)
 {
   int k;
-  for(int i=0; i < len; i++)
+  for(u32 i=0; i < len; i++)
   {
     k = 1;
-    for(int j=0; j < key; j++)
+    for(u32 j=0; j < key; j++)
     {
       // Modular Exponentiation
       k *= encr_str[i];
@@ -117,7 +147,7 @@ char* decrypt(char* encr_str, u32 len, u32 key, u32 n)
   {
     k = 1;
     ch = encr_str[i];
-    for(int j=0; j < key; j++)
+    for(u32 j=0; j < key; j++)
     {
       // Modular Exponentiation
       k *= ch;
