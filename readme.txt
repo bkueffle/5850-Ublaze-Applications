@@ -8,7 +8,7 @@ doc
   |
   --> paper.pdf
   --> poster.pdf
-  --> presentation.ppt
+  --> presentation.pptx
 
 Vivado Project & Block Diagram
 
