@@ -11397,3 +11397,45 @@ con
 
 20:57:02 INFO  : Launch script is exported to file 'C:\Users\Benjamin\Documents\Word-documents\CPP\ECE-5850\5850-Ublaze-Applications\src\uBlaze_Applications\uBlaze_Applications.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ublaze_application.elf_on_local.tcl'
 20:58:42 INFO  : Disconnected from the channel tcfchan#1.
+19:33:17 INFO  : Registering command handlers for SDK TCF services
+19:33:20 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Benjamin\Documents\Word-documents\CPP\ECE-5850\5850-Ublaze-Applications\src\uBlaze_Applications\uBlaze_Applications.sdk\temp_xsdb_launch_script.tcl
+19:33:35 INFO  : XSCT server has started successfully.
+19:33:35 INFO  : Successfully done setting XSCT server connection channel  
+19:33:36 INFO  : Successfully done setting SDK workspace  
+19:33:36 INFO  : Processing command line option -hwspec C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper.hdf.
+19:33:36 INFO  : Checking for hwspec changes in the project base_mb_wrapper_hw_platform_0.
+20:41:00 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Benjamin\Documents\Word-documents\CPP\ECE-5850\5850-Ublaze-Applications\src\uBlaze_Applications\uBlaze_Applications.sdk\temp_xsdb_launch_script.tcl
+20:41:04 INFO  : XSCT server has started successfully.
+20:41:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:41:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty S7 - 50 210352A6C016A" && level==0} -index 0' command is executed.
+20:41:53 INFO  : FPGA configured successfully with bitstream "C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/base_mb_wrapper_hw_platform_0/download.bit"
+21:26:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty S7 - 50 210352A6C016A" && level==0} -index 0' command is executed.
+21:26:02 INFO  : 'fpga -state' command is executed.
+21:26:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:26:02 INFO  : Jtag cable 'Digilent Arty S7 - 50 210352A6C016A' is selected.
+21:26:02 INFO  : 'jtag frequency' command is executed.
+21:26:02 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:26:03 INFO  : Context for processor 'microblaze_0' is selected.
+21:26:03 INFO  : Processor reset is completed for 'microblaze_0'.
+21:26:03 INFO  : Context for processor 'microblaze_0' is selected.
+21:26:03 INFO  : The application 'C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/ublaze_application/Debug/ublaze_application.elf' is downloaded to processor 'microblaze_0'.
+21:26:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Arty S7 - 50 210352A6C016A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Arty S7 - 50 210352A6C016A"} -index 0
+dow C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.sdk/ublaze_application/Debug/ublaze_application.elf
+----------------End of Script----------------
+
+21:26:03 INFO  : Memory regions updated for context MicroBlaze #0
+21:26:03 INFO  : Memory regions updated for context MicroBlaze #0
+21:26:03 INFO  : Context for processor 'microblaze_0' is selected.
+21:26:03 INFO  : 'con' command is executed.
+21:26:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Arty S7 - 50 210352A6C016A"} -index 0
+con
+----------------End of Script----------------
+
+21:26:03 INFO  : Launch script is exported to file 'C:\Users\Benjamin\Documents\Word-documents\CPP\ECE-5850\5850-Ublaze-Applications\src\uBlaze_Applications\uBlaze_Applications.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_ublaze_application.elf_on_local.tcl'
+21:36:18 INFO  : Disconnected from the channel tcfchan#1.
