@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1557022160">
-  <File Type="PA-TCL" Name="base_mb_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="base_mb_wrapper_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="base_mb_wrapper_reports.tcl"/>
-  <File Type="RDS-RDS" Name="base_mb_wrapper.vds"/>
-  <File Type="RDS-UTIL" Name="base_mb_wrapper_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="base_mb_wrapper_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="base_mb_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="base_mb_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="base_mb_wrapper_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1563072181">
+  <File Type="PA-TCL" Name="pwr_test_top.tcl"/>
+  <File Type="REPORTS-TCL" Name="pwr_test_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="pwr_test_top.vds"/>
+  <File Type="RDS-UTIL" Name="pwr_test_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="pwr_test_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="pwr_test_top.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/pwr_test_top.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/base_mb/base_mb.bd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,14 +25,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/bd/base_mb/hdl/base_mb_wrapper.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="base_mb_wrapper"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="pwr_test_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

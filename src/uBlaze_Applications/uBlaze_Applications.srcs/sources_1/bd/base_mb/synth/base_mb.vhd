@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Sat May  4 19:09:08 2019
+--Date        : Sat Jul 13 18:47:22 2019
 --Host        : Drew running 64-bit major release  (build 9200)
 --Command     : generate_target base_mb.bd
 --Design      : base_mb
@@ -2302,7 +2302,7 @@ entity base_mb is
     uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of base_mb : entity is "base_mb,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base_mb,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""da_axi4_cnt""""""""""=2,""""""""""da_mb_cnt""""""""""=1,""""""""da_axi4_cnt""""""""=2,""""""da_axi4_cnt""""""=1,""""da_axi4_cnt""""=2,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of base_mb : entity is "base_mb,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base_mb,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""""""da_axi4_cnt""""""""""""""=2,""""""""""""""da_mb_cnt""""""""""""""=1,""""""""""""da_axi4_cnt""""""""""""=2,""""""""""da_axi4_cnt""""""""""=1,""""""""da_axi4_cnt""""""""=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of base_mb : entity is "base_mb.hwdef";
 end base_mb;
@@ -2437,7 +2437,15 @@ architecture STRUCTURE of base_mb is
     Dbg_Capture : in STD_LOGIC;
     Dbg_Update : in STD_LOGIC;
     Debug_Rst : in STD_LOGIC;
-    Dbg_Disable : in STD_LOGIC
+    Dbg_Disable : in STD_LOGIC;
+    M0_AXIS_TLAST : out STD_LOGIC;
+    M0_AXIS_TDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M0_AXIS_TVALID : out STD_LOGIC;
+    M0_AXIS_TREADY : in STD_LOGIC;
+    S0_AXIS_TLAST : in STD_LOGIC;
+    S0_AXIS_TDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S0_AXIS_TVALID : in STD_LOGIC;
+    S0_AXIS_TREADY : out STD_LOGIC
   );
   end component base_mb_microblaze_0_0;
   component base_mb_rst_clk_wiz_1_100M_0 is
@@ -2496,8 +2504,17 @@ architecture STRUCTURE of base_mb is
   signal axi_uartlite_0_UART_TxD : STD_LOGIC;
   signal clk_wiz_1_clkfb_out : STD_LOGIC;
   signal clk_wiz_1_locked : STD_LOGIC;
+  signal mdm_1_Dbg_Capture_0 : STD_LOGIC;
+  signal mdm_1_Dbg_Clk_0 : STD_LOGIC;
+  signal mdm_1_Dbg_Disable_0 : STD_LOGIC;
+  signal mdm_1_Dbg_Reg_En_0 : STD_LOGIC_VECTOR ( 0 to 7 );
+  signal mdm_1_Dbg_Rst_0 : STD_LOGIC;
+  signal mdm_1_Dbg_Shift_0 : STD_LOGIC;
+  signal mdm_1_Dbg_TDI_0 : STD_LOGIC;
+  signal mdm_1_Dbg_Update_0 : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_0_Clk : STD_LOGIC;
+  signal microblaze_0_Dbg_TDO : STD_LOGIC;
   signal microblaze_0_M_AXI_DP_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal microblaze_0_M_AXI_DP_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal microblaze_0_M_AXI_DP_ARREADY : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -2568,15 +2585,6 @@ architecture STRUCTURE of base_mb is
   signal microblaze_0_axi_periph_M02_AXI_WREADY : STD_LOGIC;
   signal microblaze_0_axi_periph_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal microblaze_0_axi_periph_M02_AXI_WVALID : STD_LOGIC;
-  signal microblaze_0_debug_CAPTURE : STD_LOGIC;
-  signal microblaze_0_debug_CLK : STD_LOGIC;
-  signal microblaze_0_debug_DISABLE : STD_LOGIC;
-  signal microblaze_0_debug_REG_EN : STD_LOGIC_VECTOR ( 0 to 7 );
-  signal microblaze_0_debug_RST : STD_LOGIC;
-  signal microblaze_0_debug_SHIFT : STD_LOGIC;
-  signal microblaze_0_debug_TDI : STD_LOGIC;
-  signal microblaze_0_debug_TDO : STD_LOGIC;
-  signal microblaze_0_debug_UPDATE : STD_LOGIC;
   signal microblaze_0_dlmb_1_ABUS : STD_LOGIC_VECTOR ( 0 to 31 );
   signal microblaze_0_dlmb_1_ADDRSTROBE : STD_LOGIC;
   signal microblaze_0_dlmb_1_BE : STD_LOGIC_VECTOR ( 0 to 3 );
@@ -2608,7 +2616,11 @@ architecture STRUCTURE of base_mb is
   signal NLW_axi_timer_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_timer_0_pwm0_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
+  signal NLW_microblaze_0_M0_AXIS_TLAST_UNCONNECTED : STD_LOGIC;
+  signal NLW_microblaze_0_M0_AXIS_TVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_microblaze_0_S0_AXIS_TREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
+  signal NLW_microblaze_0_M0_AXIS_TDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_microblaze_0_axi_periph_S01_AXI_arready_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_axi_periph_S01_AXI_awready_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_axi_periph_S01_AXI_bresp_UNCONNECTED : STD_LOGIC;
@@ -2647,7 +2659,7 @@ begin
   axi_uartlite_0_UART_RxD <= uart_rxd;
   gpio_tri_o(5 downto 0) <= axi_gpio_0_GPIO_TRI_O(5 downto 0);
   gpio_tri_t(5 downto 0) <= axi_gpio_0_GPIO_TRI_T(5 downto 0);
-  led0(0) <= rst_clk_wiz_1_100M_bus_struct_reset(0);
+  led0(0) <= microblaze_0_Clk;
   led1(0) <= rst_clk_wiz_1_100M_peripheral_aresetn(0);
   led2 <= rst_clk_wiz_1_100M_mb_reset;
   led3 <= sw0_1;
@@ -2745,15 +2757,15 @@ clk_wiz_1: component base_mb_clk_wiz_1_0
     );
 mdm_1: component base_mb_mdm_1_0
      port map (
-      Dbg_Capture_0 => microblaze_0_debug_CAPTURE,
-      Dbg_Clk_0 => microblaze_0_debug_CLK,
-      Dbg_Disable_0 => microblaze_0_debug_DISABLE,
-      Dbg_Reg_En_0(0 to 7) => microblaze_0_debug_REG_EN(0 to 7),
-      Dbg_Rst_0 => microblaze_0_debug_RST,
-      Dbg_Shift_0 => microblaze_0_debug_SHIFT,
-      Dbg_TDI_0 => microblaze_0_debug_TDI,
-      Dbg_TDO_0 => microblaze_0_debug_TDO,
-      Dbg_Update_0 => microblaze_0_debug_UPDATE,
+      Dbg_Capture_0 => mdm_1_Dbg_Capture_0,
+      Dbg_Clk_0 => mdm_1_Dbg_Clk_0,
+      Dbg_Disable_0 => mdm_1_Dbg_Disable_0,
+      Dbg_Reg_En_0(0 to 7) => mdm_1_Dbg_Reg_En_0(0 to 7),
+      Dbg_Rst_0 => mdm_1_Dbg_Rst_0,
+      Dbg_Shift_0 => mdm_1_Dbg_Shift_0,
+      Dbg_TDI_0 => mdm_1_Dbg_TDI_0,
+      Dbg_TDO_0 => microblaze_0_Dbg_TDO,
+      Dbg_Update_0 => mdm_1_Dbg_Update_0,
       Debug_SYS_Rst => mdm_1_debug_sys_rst
     );
 microblaze_0: component base_mb_microblaze_0_0
@@ -2768,15 +2780,15 @@ microblaze_0: component base_mb_microblaze_0_0
       Data_Addr(0 to 31) => microblaze_0_dlmb_1_ABUS(0 to 31),
       Data_Read(0 to 31) => microblaze_0_dlmb_1_READDBUS(0 to 31),
       Data_Write(0 to 31) => microblaze_0_dlmb_1_WRITEDBUS(0 to 31),
-      Dbg_Capture => microblaze_0_debug_CAPTURE,
-      Dbg_Clk => microblaze_0_debug_CLK,
-      Dbg_Disable => microblaze_0_debug_DISABLE,
-      Dbg_Reg_En(0 to 7) => microblaze_0_debug_REG_EN(0 to 7),
-      Dbg_Shift => microblaze_0_debug_SHIFT,
-      Dbg_TDI => microblaze_0_debug_TDI,
-      Dbg_TDO => microblaze_0_debug_TDO,
-      Dbg_Update => microblaze_0_debug_UPDATE,
-      Debug_Rst => microblaze_0_debug_RST,
+      Dbg_Capture => mdm_1_Dbg_Capture_0,
+      Dbg_Clk => mdm_1_Dbg_Clk_0,
+      Dbg_Disable => mdm_1_Dbg_Disable_0,
+      Dbg_Reg_En(0 to 7) => mdm_1_Dbg_Reg_En_0(0 to 7),
+      Dbg_Shift => mdm_1_Dbg_Shift_0,
+      Dbg_TDI => mdm_1_Dbg_TDI_0,
+      Dbg_TDO => microblaze_0_Dbg_TDO,
+      Dbg_Update => mdm_1_Dbg_Update_0,
+      Debug_Rst => mdm_1_Dbg_Rst_0,
       ICE => microblaze_0_ilmb_1_CE,
       IFetch => microblaze_0_ilmb_1_READSTROBE,
       IReady => microblaze_0_ilmb_1_READY,
@@ -2788,6 +2800,10 @@ microblaze_0: component base_mb_microblaze_0_0
       Interrupt => '0',
       Interrupt_Ack(0 to 1) => NLW_microblaze_0_Interrupt_Ack_UNCONNECTED(0 to 1),
       Interrupt_Address(0 to 31) => B"00000000000000000000000000000000",
+      M0_AXIS_TDATA(31 downto 0) => NLW_microblaze_0_M0_AXIS_TDATA_UNCONNECTED(31 downto 0),
+      M0_AXIS_TLAST => NLW_microblaze_0_M0_AXIS_TLAST_UNCONNECTED,
+      M0_AXIS_TREADY => '1',
+      M0_AXIS_TVALID => NLW_microblaze_0_M0_AXIS_TVALID_UNCONNECTED,
       M_AXI_DP_ARADDR(31 downto 0) => microblaze_0_M_AXI_DP_ARADDR(31 downto 0),
       M_AXI_DP_ARPROT(2 downto 0) => microblaze_0_M_AXI_DP_ARPROT(2 downto 0),
       M_AXI_DP_ARREADY => microblaze_0_M_AXI_DP_ARREADY(0),
@@ -2809,6 +2825,10 @@ microblaze_0: component base_mb_microblaze_0_0
       M_AXI_DP_WVALID => microblaze_0_M_AXI_DP_WVALID,
       Read_Strobe => microblaze_0_dlmb_1_READSTROBE,
       Reset => rst_clk_wiz_1_100M_mb_reset,
+      S0_AXIS_TDATA(31 downto 0) => B"00000000000000000000000000000000",
+      S0_AXIS_TLAST => '0',
+      S0_AXIS_TREADY => NLW_microblaze_0_S0_AXIS_TREADY_UNCONNECTED,
+      S0_AXIS_TVALID => '0',
       Write_Strobe => microblaze_0_dlmb_1_WRITESTROBE
     );
 microblaze_0_axi_periph: entity work.base_mb_microblaze_0_axi_periph_0

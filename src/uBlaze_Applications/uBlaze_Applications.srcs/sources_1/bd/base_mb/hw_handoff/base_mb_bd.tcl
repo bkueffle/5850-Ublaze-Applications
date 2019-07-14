@@ -292,9 +292,9 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.CLKIN1_JITTER_PS {100.0} \
    CONFIG.CLKOUT1_DRIVES {No_buffer} \
-   CONFIG.CLKOUT1_JITTER {137.681} \
-   CONFIG.CLKOUT1_PHASE_ERROR {105.461} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {100.000} \
+   CONFIG.CLKOUT1_JITTER {234.704} \
+   CONFIG.CLKOUT1_PHASE_ERROR {254.101} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125.000} \
    CONFIG.CLKOUT1_USED {true} \
    CONFIG.CLKOUT2_DRIVES {BUFG} \
    CONFIG.CLKOUT3_DRIVES {BUFG} \
@@ -303,12 +303,12 @@ proc create_root_design { parentCell } {
    CONFIG.CLKOUT6_DRIVES {BUFG} \
    CONFIG.CLKOUT7_DRIVES {BUFG} \
    CONFIG.FEEDBACK_SOURCE {FDBK_ONCHIP} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {9} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {35} \
    CONFIG.MMCM_CLKIN1_PERIOD {10.000} \
    CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {9} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {7} \
    CONFIG.MMCM_COMPENSATION {ZHOLD} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {4} \
    CONFIG.OVERRIDE_MMCM {false} \
    CONFIG.PRIMITIVE {PLL} \
    CONFIG.RESET_PORT {resetn} \
@@ -324,26 +324,26 @@ proc create_root_design { parentCell } {
    CONFIG.C_ADDR_TAG_BITS {0} \
    CONFIG.C_ALLOW_ICACHE_WR {1} \
    CONFIG.C_AREA_OPTIMIZED {0} \
-   CONFIG.C_CACHE_BYTE_SIZE {32768} \
+   CONFIG.C_CACHE_BYTE_SIZE {4096} \
    CONFIG.C_DATA_SIZE {32} \
    CONFIG.C_DCACHE_ADDR_TAG {0} \
-   CONFIG.C_DCACHE_BYTE_SIZE {32768} \
-   CONFIG.C_DCACHE_LINE_LEN {8} \
-   CONFIG.C_DCACHE_USE_WRITEBACK {1} \
-   CONFIG.C_DCACHE_VICTIMS {8} \
+   CONFIG.C_DCACHE_BYTE_SIZE {4096} \
+   CONFIG.C_DCACHE_LINE_LEN {4} \
+   CONFIG.C_DCACHE_USE_WRITEBACK {0} \
+   CONFIG.C_DCACHE_VICTIMS {0} \
    CONFIG.C_DEBUG_ENABLED {1} \
    CONFIG.C_DIV_ZERO_EXCEPTION {0} \
    CONFIG.C_D_AXI {1} \
    CONFIG.C_D_LMB {1} \
    CONFIG.C_FPU_EXCEPTION {0} \
-   CONFIG.C_FSL_LINKS {0} \
-   CONFIG.C_ICACHE_LINE_LEN {8} \
-   CONFIG.C_ICACHE_STREAMS {1} \
-   CONFIG.C_ICACHE_VICTIMS {8} \
+   CONFIG.C_FSL_LINKS {1} \
+   CONFIG.C_ICACHE_LINE_LEN {4} \
+   CONFIG.C_ICACHE_STREAMS {0} \
+   CONFIG.C_ICACHE_VICTIMS {0} \
    CONFIG.C_ILL_OPCODE_EXCEPTION {0} \
    CONFIG.C_I_LMB {1} \
-   CONFIG.C_MMU_DTLB_SIZE {4} \
-   CONFIG.C_MMU_ITLB_SIZE {2} \
+   CONFIG.C_MMU_DTLB_SIZE {2} \
+   CONFIG.C_MMU_ITLB_SIZE {1} \
    CONFIG.C_MMU_ZONES {2} \
    CONFIG.C_M_AXI_D_BUS_EXCEPTION {0} \
    CONFIG.C_M_AXI_I_BUS_EXCEPTION {0} \
@@ -353,18 +353,18 @@ proc create_root_design { parentCell } {
    CONFIG.C_OPCODE_0x0_ILLEGAL {0} \
    CONFIG.C_PVR {0} \
    CONFIG.C_UNALIGNED_EXCEPTIONS {0} \
-   CONFIG.C_USE_BARREL {1} \
+   CONFIG.C_USE_BARREL {0} \
    CONFIG.C_USE_BRANCH_TARGET_CACHE {0} \
    CONFIG.C_USE_DCACHE {0} \
-   CONFIG.C_USE_DIV {1} \
+   CONFIG.C_USE_DIV {0} \
    CONFIG.C_USE_FPU {0} \
-   CONFIG.C_USE_HW_MUL {1} \
+   CONFIG.C_USE_HW_MUL {0} \
    CONFIG.C_USE_ICACHE {0} \
    CONFIG.C_USE_MMU {0} \
-   CONFIG.C_USE_MSR_INSTR {1} \
-   CONFIG.C_USE_PCMP_INSTR {1} \
-   CONFIG.C_USE_REORDER_INSTR {1} \
-   CONFIG.G_TEMPLATE_LIST {2} \
+   CONFIG.C_USE_MSR_INSTR {0} \
+   CONFIG.C_USE_PCMP_INSTR {0} \
+   CONFIG.C_USE_REORDER_INSTR {0} \
+   CONFIG.G_TEMPLATE_LIST {3} \
    CONFIG.G_USE_EXCEPTIONS {0} \
  ] $microblaze_0
 
@@ -399,17 +399,25 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M00_AXI [get_bd_intf_pins axi_uartlite_0/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M00_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M01_AXI [get_bd_intf_pins axi_gpio_0/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M02_AXI [get_bd_intf_pins axi_timer_0/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M02_AXI]
-  connect_bd_intf_net -intf_net microblaze_0_debug [get_bd_intf_pins mdm_1/MBDEBUG_0] [get_bd_intf_pins microblaze_0/DEBUG]
   connect_bd_intf_net -intf_net microblaze_0_dlmb_1 [get_bd_intf_pins microblaze_0/DLMB] [get_bd_intf_pins microblaze_0_local_memory/DLMB]
   connect_bd_intf_net -intf_net microblaze_0_ilmb_1 [get_bd_intf_pins microblaze_0/ILMB] [get_bd_intf_pins microblaze_0_local_memory/ILMB]
 
   # Create port connections
   connect_bd_net -net clk_wiz_1_clkfb_out [get_bd_pins clk_wiz_1/clkfb_in] [get_bd_pins clk_wiz_1/clkfb_out]
   connect_bd_net -net clk_wiz_1_locked [get_bd_pins clk_wiz_1/locked] [get_bd_pins rst_clk_wiz_1_100M/dcm_locked]
+  connect_bd_net -net mdm_1_Dbg_Capture_0 [get_bd_pins mdm_1/Dbg_Capture_0] [get_bd_pins microblaze_0/Dbg_Capture]
+  connect_bd_net -net mdm_1_Dbg_Clk_0 [get_bd_pins mdm_1/Dbg_Clk_0] [get_bd_pins microblaze_0/Dbg_Clk]
+  connect_bd_net -net mdm_1_Dbg_Disable_0 [get_bd_pins mdm_1/Dbg_Disable_0] [get_bd_pins microblaze_0/Dbg_Disable]
+  connect_bd_net -net mdm_1_Dbg_Reg_En_0 [get_bd_pins mdm_1/Dbg_Reg_En_0] [get_bd_pins microblaze_0/Dbg_Reg_En]
+  connect_bd_net -net mdm_1_Dbg_Rst_0 [get_bd_pins mdm_1/Dbg_Rst_0] [get_bd_pins microblaze_0/Debug_Rst]
+  connect_bd_net -net mdm_1_Dbg_Shift_0 [get_bd_pins mdm_1/Dbg_Shift_0] [get_bd_pins microblaze_0/Dbg_Shift]
+  connect_bd_net -net mdm_1_Dbg_TDI_0 [get_bd_pins mdm_1/Dbg_TDI_0] [get_bd_pins microblaze_0/Dbg_TDI]
+  connect_bd_net -net mdm_1_Dbg_Update_0 [get_bd_pins mdm_1/Dbg_Update_0] [get_bd_pins microblaze_0/Dbg_Update]
   connect_bd_net -net mdm_1_debug_sys_rst [get_bd_pins mdm_1/Debug_SYS_Rst] [get_bd_pins rst_clk_wiz_1_100M/mb_debug_sys_rst]
-  connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins microblaze_0_axi_periph/S02_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins rst_clk_wiz_1_100M/slowest_sync_clk]
+  connect_bd_net -net microblaze_0_Clk [get_bd_ports led0] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins microblaze_0_axi_periph/S02_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins rst_clk_wiz_1_100M/slowest_sync_clk]
+  connect_bd_net -net microblaze_0_Dbg_TDO [get_bd_pins mdm_1/Dbg_TDO_0] [get_bd_pins microblaze_0/Dbg_TDO]
   connect_bd_net -net reset_1 [get_bd_ports reset_n] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in]
-  connect_bd_net -net rst_clk_wiz_1_100M_bus_struct_reset [get_bd_ports led0] [get_bd_pins microblaze_0_local_memory/SYS_Rst] [get_bd_pins rst_clk_wiz_1_100M/bus_struct_reset]
+  connect_bd_net -net rst_clk_wiz_1_100M_bus_struct_reset [get_bd_pins microblaze_0_local_memory/SYS_Rst] [get_bd_pins rst_clk_wiz_1_100M/bus_struct_reset]
   connect_bd_net -net rst_clk_wiz_1_100M_mb_reset [get_bd_ports led2] [get_bd_pins microblaze_0/Reset] [get_bd_pins rst_clk_wiz_1_100M/mb_reset]
   connect_bd_net -net rst_clk_wiz_1_100M_peripheral_aresetn [get_bd_ports led1] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_timer_0/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins microblaze_0_axi_periph/S01_ARESETN] [get_bd_pins microblaze_0_axi_periph/S02_ARESETN] [get_bd_pins rst_clk_wiz_1_100M/peripheral_aresetn]
   connect_bd_net -net sw0_1 [get_bd_ports led3] [get_bd_ports sw0]
@@ -418,7 +426,7 @@ proc create_root_design { parentCell } {
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] SEG_axi_gpio_0_Reg
-  create_bd_addr_seg -range 0x00001000 -offset 0x41C00000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] SEG_axi_timer_0_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41C00000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] SEG_axi_timer_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x40600000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_uartlite_0/S_AXI/Reg] SEG_axi_uartlite_0_Reg
   create_bd_addr_seg -range 0x00040000 -offset 0x00000000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs microblaze_0_local_memory/dlmb_bram_if_cntlr/SLMB/Mem] SEG_dlmb_bram_if_cntlr_Mem
   create_bd_addr_seg -range 0x00040000 -offset 0x00000000 [get_bd_addr_spaces microblaze_0/Instruction] [get_bd_addr_segs microblaze_0_local_memory/ilmb_bram_if_cntlr/SLMB/Mem] SEG_ilmb_bram_if_cntlr_Mem

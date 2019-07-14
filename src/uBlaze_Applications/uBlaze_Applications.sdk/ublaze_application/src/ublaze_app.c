@@ -20,10 +20,10 @@ int main()
     const u32 EOS_TIMEOUT_US = 100000;
 
     // Enable printing the decrypted result
-    const u8 SHOW_RESULT = 1;
+    const u8 SHOW_RESULT = 0;
 
     // Enable showing the encrypted value
-    const u8 SHOW_ENCRYPT = 1;
+    const u8 SHOW_ENCRYPT = 0;
 
     // Enables the loop to ask for a file after completing one encryption
     const u8 LOOP_EN = 1;
@@ -70,7 +70,7 @@ int main()
                 // Loop until the RX FIFO is not empty
     
                 // Sleep for 1 us
-                usleep(1);
+            	usleep(1);
     
                 // Check to see if the RX FIFO is empty
                 uart_rx = Xil_In32(XPAR_AXI_UARTLITE_0_BASEADDR + 0x08) & 0x01;
