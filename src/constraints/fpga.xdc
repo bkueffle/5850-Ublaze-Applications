@@ -8,27 +8,27 @@
 #create_clock -add -name sys_clk_pin -period 83.333 -waveform {0 41.667} [get_ports { CLK12MHZ }];
 
 ## LEDs
-set_property -dict { PACKAGE_PIN E18   IOSTANDARD LVCMOS33 } [get_ports { led0 }]; #IO_L16N_T2_A27_15 Sch=led[2]
-set_property -dict { PACKAGE_PIN F13   IOSTANDARD LVCMOS33 } [get_ports { led1 }]; #IO_L17P_T2_A26_15 Sch=led[3]
-set_property -dict { PACKAGE_PIN E13   IOSTANDARD LVCMOS33 } [get_ports { led2 }]; #IO_L17N_T2_A25_15 Sch=led[4]
-set_property -dict { PACKAGE_PIN H15   IOSTANDARD LVCMOS33 } [get_ports { led3 }]; #IO_L18P_T2_A24_15 Sch=led[5]
+set_property -dict {PACKAGE_PIN E18 IOSTANDARD LVCMOS33} [get_ports led0]
+set_property -dict {PACKAGE_PIN F13 IOSTANDARD LVCMOS33} [get_ports led1]
+set_property -dict {PACKAGE_PIN E13 IOSTANDARD LVCMOS33} [get_ports led2]
+set_property -dict {PACKAGE_PIN H15 IOSTANDARD LVCMOS33} [get_ports led3]
 
 ## Switches
-set_property -dict { PACKAGE_PIN H14   IOSTANDARD LVCMOS33 } [get_ports { sw0 }]; #IO_L20N_T3_A19_15 Sch=sw[0]
+set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports sw0]
 #set_property -dict { PACKAGE_PIN H18   IOSTANDARD LVCMOS33 } [get_ports { board_switch[1] }]; #IO_L21P_T3_DQS_15 Sch=sw[1]
 #set_property -dict { PACKAGE_PIN G18   IOSTANDARD LVCMOS33 } [get_ports { board_switch[2] }]; #IO_L21N_T3_DQS_A18_15 Sch=sw[2]
 #set_property -dict { PACKAGE_PIN M5    IOSTANDARD SSTL135 } [get_ports { board_switch[3] }]; #IO_L6N_T0_VREF_34 Sch=sw[3]
 
 set_property -dict {PACKAGE_PIN R2 IOSTANDARD SSTL135} [get_ports sys_clk]
-set_property -dict { PACKAGE_PIN R2    IOSTANDARD SSTL135 } [get_ports { sys_clk }];
+set_property -dict {PACKAGE_PIN R2 IOSTANDARD SSTL135} [get_ports sys_clk]
 create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} -add [get_ports sys_clk]
 
 # Board reset
 set_property -dict {PACKAGE_PIN C18 IOSTANDARD LVCMOS33} [get_ports reset_n]
 
 ## USB-UART Interface
-set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { uart_rxd }]; #IO_25_14 Sch=uart_rxd_out
-set_property -dict { PACKAGE_PIN R12   IOSTANDARD LVCMOS33 } [get_ports { uart_txd }]; #IO_L24N_T3_A00_D16_14 Sch=uart_txd_in
+set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports uart_rxd]
+set_property -dict {PACKAGE_PIN R12 IOSTANDARD LVCMOS33} [get_ports uart_txd]
 
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { gpio_tri_o[0] }]; #IO_L23N_T3_FWE_B_15 Sch=led0_r
 #set_property -dict { PACKAGE_PIN G17   IOSTANDARD LVCMOS33 } [get_ports { gpio_tri_o[1] }]; #IO_L14N_T2_SRCC_15 Sch=led0_g
@@ -267,3 +267,13 @@ set_property INTERNAL_VREF 0.675 [get_iobanks 34]
 #set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
 #set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
 #connect_debug_port dbg_hub/clk [get_nets clk]
+
+
+set_switching_activity -toggle_rate 0.010 -static_probability 0.010 [get_nets base_mb_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset]
+
+set_switching_activity -toggle_rate 0.630 -static_probability 0.800 [get_nets base_mb_i/microblaze_0/U0/MicroBlaze_Core_I/sync_reset]
+
+set_operating_conditions -junction_temp 50.3
+set_operating_conditions -board_layers 4to7
+set_operating_conditions -board small
+set_operating_conditions -thetaja 15.1

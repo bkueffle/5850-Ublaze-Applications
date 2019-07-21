@@ -2,11 +2,11 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sat Jul 13 19:43:05 2019
-# Process ID: 10788
+# Start of session at: Tue Jul 16 20:38:45 2019
+# Process ID: 2196
 # Current directory: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/synth_1
-# Command line: vivado.exe -log pwr_test_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pwr_test_top.tcl
-# Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/synth_1/pwr_test_top.vds
+# Command line: vivado.exe -log base_mb_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source base_mb_wrapper.tcl
+# Log file: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/synth_1/base_mb_wrapper.vds
 # Journal file: C:/Users/Benjamin/Documents/Word-documents/CPP/ECE-5850/5850-Ublaze-Applications/src/uBlaze_Applications/uBlaze_Applications.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source pwr_test_top.tcl -notrace
+source base_mb_wrapper.tcl -notrace

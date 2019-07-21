@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
---Date        : Sat Jul 13 18:47:22 2019
+--Date        : Tue Jul 16 20:38:27 2019
 --Host        : Drew running 64-bit major release  (build 9200)
 --Command     : generate_target base_mb.bd
 --Design      : base_mb
@@ -2302,7 +2302,7 @@ entity base_mb is
     uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of base_mb : entity is "base_mb,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base_mb,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""""""da_axi4_cnt""""""""""""""=2,""""""""""""""da_mb_cnt""""""""""""""=1,""""""""""""da_axi4_cnt""""""""""""=2,""""""""""da_axi4_cnt""""""""""=1,""""""""da_axi4_cnt""""""""=2,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of base_mb : entity is "base_mb,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base_mb,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=14,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,""""""""""""""""""""da_axi4_cnt""""""""""""""""""""=2,""""""""""""""""""""da_mb_cnt""""""""""""""""""""=1,""""""""""""""""""da_axi4_cnt""""""""""""""""""=2,""""""""""""""""da_axi4_cnt""""""""""""""""=1,""""""""""""""da_axi4_cnt""""""""""""""=2,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of base_mb : entity is "base_mb.hwdef";
 end base_mb;
@@ -2437,15 +2437,7 @@ architecture STRUCTURE of base_mb is
     Dbg_Capture : in STD_LOGIC;
     Dbg_Update : in STD_LOGIC;
     Debug_Rst : in STD_LOGIC;
-    Dbg_Disable : in STD_LOGIC;
-    M0_AXIS_TLAST : out STD_LOGIC;
-    M0_AXIS_TDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M0_AXIS_TVALID : out STD_LOGIC;
-    M0_AXIS_TREADY : in STD_LOGIC;
-    S0_AXIS_TLAST : in STD_LOGIC;
-    S0_AXIS_TDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S0_AXIS_TVALID : in STD_LOGIC;
-    S0_AXIS_TREADY : out STD_LOGIC
+    Dbg_Disable : in STD_LOGIC
   );
   end component base_mb_microblaze_0_0;
   component base_mb_rst_clk_wiz_1_100M_0 is
@@ -2616,11 +2608,7 @@ architecture STRUCTURE of base_mb is
   signal NLW_axi_timer_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_timer_0_pwm0_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
-  signal NLW_microblaze_0_M0_AXIS_TLAST_UNCONNECTED : STD_LOGIC;
-  signal NLW_microblaze_0_M0_AXIS_TVALID_UNCONNECTED : STD_LOGIC;
-  signal NLW_microblaze_0_S0_AXIS_TREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
-  signal NLW_microblaze_0_M0_AXIS_TDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_microblaze_0_axi_periph_S01_AXI_arready_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_axi_periph_S01_AXI_awready_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_axi_periph_S01_AXI_bresp_UNCONNECTED : STD_LOGIC;
@@ -2800,10 +2788,6 @@ microblaze_0: component base_mb_microblaze_0_0
       Interrupt => '0',
       Interrupt_Ack(0 to 1) => NLW_microblaze_0_Interrupt_Ack_UNCONNECTED(0 to 1),
       Interrupt_Address(0 to 31) => B"00000000000000000000000000000000",
-      M0_AXIS_TDATA(31 downto 0) => NLW_microblaze_0_M0_AXIS_TDATA_UNCONNECTED(31 downto 0),
-      M0_AXIS_TLAST => NLW_microblaze_0_M0_AXIS_TLAST_UNCONNECTED,
-      M0_AXIS_TREADY => '1',
-      M0_AXIS_TVALID => NLW_microblaze_0_M0_AXIS_TVALID_UNCONNECTED,
       M_AXI_DP_ARADDR(31 downto 0) => microblaze_0_M_AXI_DP_ARADDR(31 downto 0),
       M_AXI_DP_ARPROT(2 downto 0) => microblaze_0_M_AXI_DP_ARPROT(2 downto 0),
       M_AXI_DP_ARREADY => microblaze_0_M_AXI_DP_ARREADY(0),
@@ -2825,10 +2809,6 @@ microblaze_0: component base_mb_microblaze_0_0
       M_AXI_DP_WVALID => microblaze_0_M_AXI_DP_WVALID,
       Read_Strobe => microblaze_0_dlmb_1_READSTROBE,
       Reset => rst_clk_wiz_1_100M_mb_reset,
-      S0_AXIS_TDATA(31 downto 0) => B"00000000000000000000000000000000",
-      S0_AXIS_TLAST => '0',
-      S0_AXIS_TREADY => NLW_microblaze_0_S0_AXIS_TREADY_UNCONNECTED,
-      S0_AXIS_TVALID => '0',
       Write_Strobe => microblaze_0_dlmb_1_WRITESTROBE
     );
 microblaze_0_axi_periph: entity work.base_mb_microblaze_0_axi_periph_0
